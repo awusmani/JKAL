@@ -1,0 +1,9 @@
+html, body {
+    text-align: center;
+}
+
+.shop-main {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}

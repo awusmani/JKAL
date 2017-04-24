@@ -1,0 +1,61 @@
+html{
+	background: url(images/mainBackground.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+footer {
+    position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	text-align: center;
+
+  	font-family: "stencil";
+
+}
+
+.footerLinks a{
+
+	text-decoration: none;
+	color: black;
+	margin: 0em 1em;
+	padding: .08em .2em;
+
+}
+
+.footerLinks a:hover{
+	background-color: black;
+	color: white;
+}
+
+#mainLinks{
+
+  	text-align:center;
+  	margin: 0 auto;
+
+}
+
+#mainLinks a{
+
+	text-decoration: none;
+	color: black;
+	margin: 0em 1em;
+	padding: .08em .2em;
+	font-family: "stencil";
+
+}
+
+#mainLinks a:hover{
+	background-color: black;
+	color: white;
+}
+
+#mainLogo img{
+
+	display: block;
+    margin: 10em auto 3em auto;
+}

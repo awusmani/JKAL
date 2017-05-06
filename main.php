@@ -8,7 +8,7 @@
 	        <meta charset="utf-8" />
 	        <title>JKAL</title>
 
-			<link rel="stylesheet" href="style.css" />
+			<link rel="stylesheet" href="css\style.css" />
 
 
 	    </head>

@@ -3,6 +3,7 @@ CMSC389N Group Project
 
 # Setting up database
 create database shopdb;
+
 use shopdb;
 
 <!---

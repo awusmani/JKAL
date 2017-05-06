@@ -11,9 +11,9 @@
 
 	</div>
 
-	<div id= "aboutText">
+	<div class= "centerText">
 
-		<p id = "aboutText">
+		<p>
 			JKAL is a CMSC389N Project made by Justin Kevin Abdul and Lihan. Add more shit here ya knuh 100 100 turn up for the SQUAAA bape x supreme yeezys we out here fam gang gang caravaggio
 		</p>
 

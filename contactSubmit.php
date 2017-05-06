@@ -5,22 +5,27 @@
 	
 	$body = "
 
-	<div id = 'logoContact'>
+	<div class = 'mainLogo'>
 		<img src='images\JKAL_logo.png'>
 	</div>
 
-	<div>
+	<div class= 'centerText'>
 
 		<p>
 
-			Thanks ".$_POST['firstName']." ".$_POST['lastName'].", we will reply to your message at your email, ".$_POST['email']." shortly. Thank You.
+			Thanks ".$_POST['firstName']." ".$_POST['lastName'].", </br> we will reply to your message:</br></br>
+
+			".$_POST['comments']."
+
+
+			</br></br>at your email, ".nl2br($_POST['email'])." shortly. </br>Thank You.
 
 		</p>
 
 	</div>";
 
 
-	$page = generatePage($body, "J K A L");
+	$page = generatePage($body, "JKAL- Contact");
 	echo $page;
 
 

@@ -19,7 +19,7 @@
 			</br></br>
 			message
 			</br>
-			<textarea rows="4" cols="46" name = "comments"></textarea>
+			<textarea wrap="hard" rows="4" cols="46" name = "comments"></textarea>
 			</br>
 			<input type= "submit" name= "send" value= "send">
 

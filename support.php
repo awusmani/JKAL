@@ -25,7 +25,12 @@ function generatePage($body, $title) {
                     <a href="about.php">About</a>
                     <a href="contact.php">Contact</a>
 
+                    <span class= "copyright">
+                        &copy; JKAL
+                    </span>
+
                 </div>
+
 
             </footer>
 

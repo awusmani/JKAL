@@ -29,6 +29,12 @@
 
 	            </div>
 
+	            <footer>
+	            	<div class="copyright">
+	            		&copy; JKAL
+	            	</div>
+	            </footer>
+
 	    </body>
 	</html>
 

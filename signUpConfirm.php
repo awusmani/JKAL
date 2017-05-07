@@ -3,7 +3,7 @@
 
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
-		
+
 	$database = new mysqli($host, $user, $password, $database);
 	if ($database->connect_error) {
 		die($database->connect_error);
@@ -20,13 +20,12 @@
 	$sLast = sanitize_string($database, trim($_POST["lastName"]));
 
 	$query = "insert into accounts values('$sUser', '$sEmail', '$phashed', '$sFirst', '$sLast')";
-			
 
 	$result = $database->query($query);
 	if (!$result) {
 		die("Insertion failed: " . $database->error);
 	}
-	
+
 
 
 
@@ -34,13 +33,6 @@
 
 
 	$body = "
-
-		<div class = 'mainLogo'>
-
-			<img src= 'images\JKAL_Logo.png'>
-
-		</div>
-
 		<div class= 'centerText'>
 
 			<p>

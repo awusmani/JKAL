@@ -9,11 +9,18 @@
 		die($database->connect_error);
 	}
 
+<<<<<<< HEAD
 
 
+=======
+	$user = sanitize_string($database, trim($_POST["username"]));
+	$email = sanitize_string($database, trim($_POST["email"])); 
+>>>>>>> refs/remotes/origin/master
 	$phashed = password_hash("".trim($_POST['password'])."", PASSWORD_DEFAULT);
+	$first = sanitize_string($database, trim($_POST["firstName"]));
+	$last = sanitize_string($database, trim($_POST["lastName"]));
 
-	$query = "insert into accounts values('".trim($_POST["username"]).", ".trim($_POST["signUpEmail"]).", ".trim($phashed).", ".trim($_POST["firstName"]).", ".trim($_POST["lastName"])."')";
+	$query = "insert into accounts values('$user', '$email', '$phashed', '$first', '$last')";
 			
 
 	$result = $database->query($query);
@@ -64,6 +71,12 @@
 
 	";
 
+	function sanitize_string($db_connection, $string) {
+        if (get_magic_quotes_gpc()) { 
+            $string = stripslashes($string); 
+        } 
+        return htmlentities($db_connection->real_escape_string($string)); 
+    }
 
 	$page = generatePage($body, "JKAL- Welcome");
 	echo $page;

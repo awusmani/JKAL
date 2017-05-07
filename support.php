@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function generatePage($body, $title) {
     $page = <<<EOPAGE
 <!doctype html>
@@ -8,9 +8,9 @@ function generatePage($body, $title) {
         <meta charset="utf-8" />
         <title>$title</title>
 
-        <link rel="stylesheet" href="css\style.css" />
+        <link rel="stylesheet" href="css\support.css" />
         <link rel="stylesheet" href="css\signUpLogin.css" />
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -25,7 +25,7 @@ function generatePage($body, $title) {
     <body>
       $body
       <footer>
-          <div class= "footerLinks">
+          <div class= "footer">
               <a href="main.php">Home</a>
               <a href="storeMain.php">Store</a>
               <a href="about.php">About</a>

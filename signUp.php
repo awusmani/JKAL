@@ -1,6 +1,6 @@
 <?php
 
-	include "support.php";
+	require_once "support.php";
 
 	$body = <<<EOBODY
 	<div id= "contact">
@@ -13,7 +13,7 @@
 			<input type= "email" name= "email" placeholder= "email" required>
 			</br></br>
 
-			<input type= "text" name= "username" placeholder= "username" required>
+			<input type= "text" name= "username" placeholder= "username" id="username" required>
 			</br></br>
 
 			<input type= "password" name= "password" placeholder= "password" id="password" required>
@@ -28,6 +28,7 @@
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 
 		</form>
+
 		<br />
 	</div>
 EOBODY;

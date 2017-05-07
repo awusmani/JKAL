@@ -7,40 +7,26 @@
 	if ($database->connect_error) {
 		die($database->connect_error);
 	}
+    
+    $last_id = $_SESSION['lastid'];
 
-    $sPrice = $_SESSION["price"];
-    $sName = sanitize_string($database, trim($_SESSION["name"]));
-    $sType = sanitize_string($database, trim($_SESSION["category"])); 
-    $sDsrt = sanitize_string($database, $_SESSION["description"]); 
-    //change back once log in functionality works
-    $sUser = 'testacc';  	
-    //$sUser = sanitize_string($database, trim($_SESSION["username"]));
-    $sQnty = $_SESSION["quantity"];
-    $sSold = 0;
-    $sImg = glob("upload/".$_SESSION["pic"]);
-    //$sImg2 = $_SESSION["imagetwo"];
-    //$sImg3 = $_SESSION["imagethree"];
-
-	$query = "insert into items values('', '$sPrice', '$sName', '$sType', '$sDsrt', '$sUser', '$sQnty', '$sSold')";
-    //$query2 = "insert into images values()";
-
-	$result = $database->query($query);
-	if (!$result) {
-		die("Insertion failed: " . $database->error);
-	}
-    /*
-    $result2 = $database->query($query2);
-	if (!$result2) {
-		die("Insertion failed: " . $database->error);
-	}
-    */
+    $query = "select imageone from images where id='$last_id'";
+    $result = $database->query($query);
+    if (!$result) {
+        die("Query failed: " . $database->error);
+    } else {
+        header("Content-type: image/png");
+        echo mysqli_result($result,0);
+    }
 
 	$database->close();
 
 
 	$bottomPart = <<<EOBODY
-        <p> Hello </p>
+        <p> Hello </p><br />
 EOBODY;
+    $bottomPart .= "<p>".$_SESSION["pic"]."</p><br />";
+    $bottomPart .= "<p>".$sImg[0]."</p>";
 
 	function sanitize_string($db_connection, $string) {
         if (get_magic_quotes_gpc()) { 

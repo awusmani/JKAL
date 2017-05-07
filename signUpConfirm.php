@@ -1,6 +1,4 @@
 <?php
-
-
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 
@@ -8,10 +6,6 @@
 	if ($database->connect_error) {
 		die($database->connect_error);
 	}
-
-	$user = sanitize_string($database, trim($_POST["username"]));
-	$email = sanitize_string($database, trim($_POST["email"])); 
-
 
 	$sUser = sanitize_string($database, trim($_POST["username"]));
 	$sEmail = sanitize_string($database, trim($_POST["email"])); 

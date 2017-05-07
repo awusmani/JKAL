@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 	
@@ -11,6 +12,9 @@
 	</div>
 =======
 	include "support.php";
+>>>>>>> refs/remotes/origin/master
+=======
+	require_once "support.php";
 >>>>>>> refs/remotes/origin/master
 
 	$body = <<<EOBODY
@@ -24,7 +28,7 @@
 			<input type= "email" name= "email" placeholder= "email" required>
 			</br></br>
 
-			<input type= "text" name= "username" placeholder= "username" required>
+			<input type= "text" name= "username" placeholder= "username" id="username" required>
 			</br></br>
 
 			<input type= "password" name= "password" placeholder= "password" id="password" required>
@@ -39,6 +43,7 @@
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 
 		</form>
+
 		<br />
 	</div>
 EOBODY;

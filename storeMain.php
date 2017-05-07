@@ -1,8 +1,8 @@
 <?php
-	
+
 	require_once "support.php";
 
-	
+
 	$body = <<<EOBODY
 
 	<div id= "loginSignUp">
@@ -11,10 +11,10 @@
 
 		<a href= "login.php">Login</a>
 		<a href= "signUp.php">Sign Up</a>
-		
+
 	</div>
 	</br>
-	<div class= "clearfix">
+	<div>
 
 		<table>
 
@@ -32,7 +32,7 @@
 
 
 
-	
+
 
 
 EOBODY;

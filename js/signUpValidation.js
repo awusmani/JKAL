@@ -8,7 +8,7 @@ function main(){
 	let error = document.getElementById("invPass");
 	let signUp = document.getElementById("signUp");
 	let submit = document.getElementById("submit");
-
+	let username = document.getElementById("username").value;
 
 	signUp.onclick = function(){
 
@@ -18,8 +18,5 @@ function main(){
 		else{
 			submit.submit();
 		}
-	}
-
-
 
 }

@@ -12,6 +12,7 @@
     $sName = sanitize_string($database, trim($_SESSION["name"]));
     $sType = sanitize_string($database, trim($_SESSION["category"])); 
     $sDsrt = sanitize_string($database, $_SESSION["description"]); 
+    //change back once log in functionality works
     $sUser = 'testacc';  	
     //$sUser = sanitize_string($database, trim($_SESSION["username"]));
     $sQnty = $_SESSION["quantity"];

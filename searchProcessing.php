@@ -7,7 +7,7 @@
 		die($database->connect_error);
 	}
 
-    $word = mysql_real_escape_string($database, $_POST['word']);
+    $word = mysqli_real_escape_string($database, $_REQUEST['keyword']);
 
     if(isset($word)) {
         $query = "select * from items where name like '".$word."%'";

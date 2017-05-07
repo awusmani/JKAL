@@ -1,0 +1,17 @@
+html {
+    text-align: center;
+}
+
+.form-row {
+    display: inline;
+    margin-bottom: 10px;
+}
+
+.label-text {
+    display: block;
+}
+
+.single-button {
+    display: block;
+    margin: auto;
+}

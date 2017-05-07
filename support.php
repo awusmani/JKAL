@@ -21,9 +21,16 @@ function generatePage($body, $title) {
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <link rel="stylesheet" href="css\about.css" />
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css\style.css" />
+        <link rel="stylesheet" href="css\sellerListing.css" />
+        <link rel="stylesheet" href="css\signUpLogin.css" />
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
+<<<<<<< HEAD
         <script src="js/signUpValidation.js"></script>
+=======
+>>>>>>> master
     </head>
 
     <body>
@@ -46,10 +53,9 @@ function generatePage($body, $title) {
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-left">
-                <div class="search">
-                    <!-- autocomplete feature? -->
-                    <input type="text" autocomplete="off" placeholder="Search for item...">
-                    <div class="result"></div>
+                <div class="searchbox">
+                    <input type="text" autocomplete="off" placeholder="Search for item..." />
+                    <div class="result" width=200></div>
                 </div>
                 </form>
               <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

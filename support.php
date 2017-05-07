@@ -49,10 +49,9 @@ function generatePage($body, $title) {
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-left">
-                <div class="search">
-                    <!-- autocomplete feature? -->
-                    <input type="text" autocomplete="off" placeholder="Search for item...">
-                    <div class="result"></div>
+                <div class="searchbox">
+                    <input type="text" autocomplete="off" placeholder="Search for item..." />
+                    <div class="result" width=200></div>
                 </div>
                 </form>
               <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

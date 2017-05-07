@@ -13,18 +13,17 @@
         </div>
     </body>
 */
-window.onload = search();
 
-function search() {
-    $("input[type=text].search").on("input", function() {
-        let input = this.value;
-        let dropdown = this.siblings(".result");
+$(document).ready(function() {
+    $('.searchbox input[type="text"]').on("input", function() {
+        let input = $(this).val();
+        let dropdown = $(this).siblings(".result");
         if (input.length) {
-            $.get("../searchProcessing.php" , {word:input}).done(function(data) {
+            $.get("../JKAL/searchProcessing.php" , {keyword:input}).done(function(data) {
                 dropdown.html(data)
             });
         } else {
             dropdown.empty();
         }
     });
-}
+});

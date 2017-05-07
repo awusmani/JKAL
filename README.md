@@ -45,7 +45,7 @@ Wishlists database:
 Username(varchar) -- foreign key from accounts
 id(int) -- foreign key from items
 -->
-create table wishlists(username varchar(20) NOT NULL, id int NOT NULL, FOREIGN KEY(username) REFERENCES accounts(username), FOREIGN KEY(id) REFERENCES items(id));
+create table wishlist(username varchar(20) NOT NULL, items text, FOREIGN KEY(username) REFERENCES accounts(username) ON DELETE CASCADE);
 
 <!---
 Images database:

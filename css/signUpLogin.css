@@ -1,3 +1,7 @@
-#invPass{
-	color: red;
+.error {
+	color: #f90000;
+}
+
+body {
+	padding-top: 3em;
 }

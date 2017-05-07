@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function generatePage($body, $title) {
     $page = <<<EOPAGE
 <!doctype html>
@@ -16,17 +16,22 @@ function generatePage($body, $title) {
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css\support.css" />
+        <link rel="stylesheet" href="css\signUpLogin.css" />
+        <script src="js/signUpValidation.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         
         <link rel="stylesheet" href="css\style.css" />
         <link rel="stylesheet" href="css\sellerListing.css" />
         <link rel="stylesheet" href="css\signUpLogin.css" />
+        <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
     </head>
 
     <body>
       $body
       <footer>
-          <div class= "footerLinks">
+          <div class= "footer">
               <a href="main.php">Home</a>
               <a href="storeMain.php">Store</a>
               <a href="about.php">About</a>

@@ -55,7 +55,7 @@
             </div>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 What does it look like?
-                <input type="file" name="image" id="fileToUpload">
+                <input type="file" name="image" id="fileToUpload" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">

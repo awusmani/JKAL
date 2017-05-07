@@ -11,9 +11,10 @@ Accounts database:
 Username(varchar) -- any account can buy
 Email(varchar)
 Password(varchar)
-Seller(boolean) -- if true, can access their store from website
+First name(varchar)
+Last name(varchar)
 -->
-create table accounts(username varchar(20) NOT NULL PRIMARY KEY, email varchar(30), password varchar(100), seller enum('False','True'));
+create table accounts(username varchar(20) NOT NULL PRIMARY KEY, email varchar(30), password varchar(100), firstname varchar(20), lastname varchar(20));
 
 <!---
 Items database:

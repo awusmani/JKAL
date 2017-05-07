@@ -51,7 +51,7 @@
             <h1>Create a new listing:</h1>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">What are you selling?</span>
-                <input type="text" name="name" value="{$name}" class="listing-form" placeholder="e.g. Yeezys" required>
+                <input type="text" class="listing-form" name="name" value="{$name}" placeholder="e.g. Yeezys" required>
             </div>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 What does it look like?
@@ -60,12 +60,12 @@
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">How many?</span>
-                <input type="text" name="quantity" value="{$quantity}" class="listing-form" placeholder="enter a quantity" required>
+                <input type="text" class="listing-form" name="quantity" value="{$quantity}" placeholder="enter a quantity" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">How much per unit?</span>
-                <input type="text" name="price" value="{$price}" class="listing-form" placeholder="in whole $" required>
+                <input type="text" class="listing-form" name="price" value="{$price}" placeholder="in whole $" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-group form-row">
@@ -83,15 +83,15 @@
             </div>
             <div class="col-lg-4 col-lg-offset-4 form-group form-row">
               <span class="label-text">Anything else you want to say about it:</span>
-              <textarea class="listing-form description" rows="1" cols="50" name="description"></textarea>
+              <textarea class="listing-form description" rows="1" cols="50" name="description" placeholder="condition, rarity, etc.">$description</textarea>
             </div>
             <div class="col-lg-4 col-lg-offset-4 form-group form-row">
-                <input type="submit" name="submit" value="{$description}" class="btn btn-primary btn-sm" value="Submit Listing">
+                <input type="submit" name="submit" class="btn btn-primary btn-sm" value="Submit Listing">
             </div>
             <br>
         </form>
-        <div class="col-lg-2 col-lg-offset-5 error-text">
-            $message;
+        <div class="col-lg-4 col-lg-offset-4 error-text">
+            $message
         </div>
 
 EOBODY;

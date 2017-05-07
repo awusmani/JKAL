@@ -30,8 +30,8 @@
         if(in_array($file_ext,$extensions) === false){
             $message = $message."Please choose a JPEG or PNG file.\n";
         }
-        if($file_size > 50000000){
-            $message = $message."File size must be no bigger than 50 MB.\n";
+        if($file_size > 5242880){
+            $message = $message."File size must be no bigger than 5 MB.\n";
         }
 
         if($message == "") {
@@ -90,7 +90,7 @@
             </div>
             <br>
         </form>
-        <div class="col-lg-4 col-lg-offset-4 error-text">
+        <div class="col-lg-4 col-lg-offset-4 error-text form-row">
             $message
         </div>
 

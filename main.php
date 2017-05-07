@@ -1,10 +1,10 @@
 <?php
+	require_once("support.php");
 
-	
-	$page = <<<EOBODY
+	$body = <<<EOBODY
 
 	<html>
-	    <head> 
+	    <head>
 	        <meta charset="utf-8" />
 	        <title>JKAL</title>
 
@@ -12,7 +12,7 @@
 
 
 	    </head>
-	            
+
 	    <body>
 	    		<div class = "mainLogo">
 					<img src="images\JKAL_logo.png">
@@ -40,7 +40,8 @@
 
 EOBODY;
 
-
+$page = generatePage($body);
+echo $page;
 echo $page;
 
 

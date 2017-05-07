@@ -9,10 +9,6 @@
 		die($database->connect_error);
 	}
 
-	$user = sanitize_string($database, trim($_POST["username"]));
-	$email = sanitize_string($database, trim($_POST["email"])); 
-
-
 	$sUser = sanitize_string($database, trim($_POST["username"]));
 	$sEmail = sanitize_string($database, trim($_POST["email"])); 
 	$phashed = password_hash("".trim($_POST['password'])."", PASSWORD_DEFAULT);

@@ -2,6 +2,14 @@
 CMSC389N Group Project
 
 # Setting up database
+<!--- 
+creating user and giving privileges
+-->
+create user 'csuser'@'localhost' IDENTIFIED BY 'helloworld';
+grant all on shopdb.accounts to 'csuser'@'localhost';
+grant all on shopdb.items to 'csuser'@'localhost';
+grant all on shopdb.wishlists to 'csuser'@'localhost';
+
 create database shopdb;
 
 use shopdb;

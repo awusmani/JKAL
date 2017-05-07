@@ -23,7 +23,8 @@
 			<input type= "text" name= "username" placeholder= "username" id="username" required>
 			</br></br>
 
-			<input type= "password" name= "password" placeholder= "password" id="password" required>
+			<input type= "password" name= "password" placeholder="password" id="password" required>
+
 			</br></br>
 
 			<span class="error"></span>

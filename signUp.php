@@ -28,6 +28,7 @@
 			</br><br />
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 		</form>
+		<script src="js/signUpValidation.js"></script>
 		<br />
 	</div>
 EOBODY;

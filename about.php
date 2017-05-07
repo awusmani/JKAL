@@ -33,7 +33,7 @@
 		  </div>
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
-					<img src="images/kevin2.jpg" alt="Kevin">
+					<img src="images/kevin.jpg" alt="Kevin">
 					<div class="caption">
 						<h3>Kevin Woo</h3>
 						<p>...</p>

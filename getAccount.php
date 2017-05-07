@@ -4,6 +4,8 @@
 	/* The script displays all the records in the table           */
 	
 	require_once "accountsDBLogin.php"; 
+
+	session_start();
 		
 	$db_connection = new mysqli($host, $user, $password, $database);
 	if ($db_connection->connect_error) {
@@ -18,10 +20,27 @@
 	/* Executing query */
 	$result = $db_connection->query($query);
 	if (!$result) {
-		die("Invalid Username");
+		die("Couldnt connect to accounts database");
 	} else {
-		die("Valid Username");
-	}
+		/* Number of rows found */
+		$num_rows = $result->num_rows;
+		if ($num_rows === 0) {
+			//username not found
+			
+		} else {
+			
+			$result->data_seek(0);
+			$row = $result->fetch_array(MYSQLI_ASSOC);
+			
+			if (password_verify(trim($_POST['password']), $row['password'])) {
+				$_SESSION["firstName"] = $row["First name"];
+				$_SESSION["lastName"] = $row["Last name"];
+
+				die("Login Success");
+			}
+			else{
+				die("Incorrect Login");
+			}
 	
 	/* Freeing memory */
 	$result->close();

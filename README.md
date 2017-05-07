@@ -11,10 +11,10 @@ Accounts database:
 Username(varchar) -- any account can buy
 Email(varchar)
 Password(varchar)
-Seller(boolean) -- if true, can access their store from website
-Wishlist(varchar) -- JSON
+First name(varchar)
+Last name(varchar)
 -->
-create table accounts(username varchar(20) NOT NULL PRIMARY KEY, email varchar(30), password varchar(100), seller enum('False','True'));
+create table accounts(username varchar(20) NOT NULL PRIMARY KEY, email varchar(30), password varchar(100), firstname varchar(20), lastname varchar(20));
 
 <!---
 Items database:
@@ -24,7 +24,7 @@ Items database:
 - Name(varchar)
 - Type of item(varchar)
 - description(text)
-- username(varchar) -- foreign key from Account
+- username(varchar) -- foreign key from accounts
 - quantity(int)
 - sold(int)
 -->
@@ -32,7 +32,7 @@ create table items(id int NOT NULL AUTO_INCREMENT PRIMARY KEY, image blob, price
 
 <!---
 Wishlists database:
-Username(varchar) -- foreign key from account
-id(int) -- foreign key from wishlists
+Username(varchar) -- foreign key from accounts
+id(int) -- foreign key from items
 -->
 create table wishlists(username varchar(20) NOT NULL, id int NOT NULL, FOREIGN KEY(username) REFERENCES accounts(username), FOREIGN KEY(id) REFERENCES items(id));

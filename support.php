@@ -30,10 +30,9 @@ function generatePage($body, $title) {
         <nav class="navbar navbar-default navbar-fixed-top navbar-static-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">JKAL</a>
+              <a href="main.php"><img src="images/JKAL_logo.png" class="navbar-brand"/></a>
             </div>
             <ul class="nav navbar-nav">
-              <li><a href="main.php">Home</a></li>
               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Store<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="storeMain.php">Main</a></li>

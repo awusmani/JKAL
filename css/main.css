@@ -55,6 +55,11 @@
   color: #ffffff
 }
 
+.footer a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .footer a:hover {
   color: rgb(180, 180, 180);
 }
@@ -87,9 +92,8 @@
 	background-color: #4b6271;
 }
 
-.mainLinks a:default {
+.mainLinks a:link {
   text-decoration: none;
-	background-color: #4b6271;
   color: #ffffff;
 }
 

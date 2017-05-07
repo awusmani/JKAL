@@ -1,5 +1,6 @@
 <?php
 
+
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 		
@@ -7,6 +8,10 @@
 	if ($database->connect_error) {
 		die($database->connect_error);
 	}
+
+	$user = sanitize_string($database, trim($_POST["username"]));
+	$email = sanitize_string($database, trim($_POST["email"])); 
+
 
 	$sUser = sanitize_string($database, trim($_POST["username"]));
 	$sEmail = sanitize_string($database, trim($_POST["email"])); 
@@ -16,11 +21,14 @@
 
 	$query = "insert into accounts values('$sUser', '$sEmail', '$phashed', '$sFirst', '$sLast')";
 			
+
 	$result = $database->query($query);
 	if (!$result) {
 		die("Insertion failed: " . $database->error);
 	}
 	
+
+
 
 	$database->close();
 

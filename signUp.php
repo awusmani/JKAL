@@ -1,7 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 	
@@ -10,12 +9,11 @@
 	<div class = "mainLogo">
 		<img src="images\JKAL_logo.png">
 	</div>
-=======
+
 	include "support.php";
->>>>>>> refs/remotes/origin/master
-=======
+
 	require_once "support.php";
->>>>>>> refs/remotes/origin/master
+
 
 	$body = <<<EOBODY
 
@@ -39,7 +37,7 @@
 
 			<input type= "password" name= "confirmPassword" placeholder= "confirm password" id="confirmPassword" required>
 			</br><br />
-			<span id="invPass" class="error"></span>
+			<span id="invPass" id="invPass" class="error"></span>
 			</br><br />
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 		</form>

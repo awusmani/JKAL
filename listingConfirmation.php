@@ -9,16 +9,16 @@
 		die($database->connect_error);
 	}
 
-    $sPrice = $_POST["price"];
-    $sName = sanitize_string($database, trim($_POST["name"]));
-    $sType = sanitize_string($database, trim($_POST["type"])); 
-    $sDsrt = $_POST["description"];   	
-    $sUser = sanitize_string($database, trim($_SERVER["username"]));
-    $sQnty = $_POST["quanity"];
+    $sPrice = $_SESSION["price"];
+    $sName = sanitize_string($database, trim($_SESSION["name"]));
+    $sType = sanitize_string($database, trim($_SESSION["type"])); 
+    $sDsrt = $_SESSION["description"];   	
+    $sUser = sanitize_string($database, trim($_SESSION["username"]));
+    $sQnty = $_SESSION["quanity"];
     $sSold = 0;
-    $sImg1 = $_POST["imageone"];
-    $sImg2 = $_POST["imagetwo"];
-    $sImg3 = $_POST["imagethree"];
+    $sImg1 = $_SESSION["imageone"];
+    $sImg2 = $_SESSION["imagetwo"];
+    $sImg3 = $_SESSION["imagethree"];
 
 
 
@@ -51,7 +51,7 @@ EOBODY;
     }
 
     $body = $bottomPart;
-	$page = generatePage($body, "JKAL- Welcome");
+	$page = generatePage($body, "Listing Confirmation");
 	echo $page;
 
 ?>

@@ -17,11 +17,17 @@
    /* Font */
    color: #ffffff;
    font-family: 'Poppins', sans-serif;
+   padding-top: 13%;
 }
 
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 @-moz-keyframes fadein {
@@ -61,7 +67,7 @@
 }
 
 .footer a:hover {
-  color: rgb(180, 180, 180);
+  color: #b4b4b4;
 }
 
 .mainLinks{
@@ -83,8 +89,8 @@
 
 .mainLinks a:hover{
   text-decoration: none;
-	background-color: #4b6271;
-  color: #ffffff;
+	/*background-color: #4b6271;*/
+  color: #b4b4b4;
 }
 
 .mainLinks a:visited{
@@ -99,6 +105,26 @@
 
 .mainLogo {
 	display: block;
-  margin: 6em auto 1em auto;
+  margin: 0 auto 1em auto;
   text-align: center;
+}
+
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1.5s;
+  animation-name: animatebottom;
+  animation-duration: 1.5s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
 }

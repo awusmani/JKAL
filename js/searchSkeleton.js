@@ -1,4 +1,4 @@
-/*  
+/*
     <!--HTML Snippet-->
     <!--jquery-->
     <head>
@@ -20,7 +20,7 @@ function search() {
         let input = this.value;
         let dropdown = this.siblings(".result");
         if (input.length) {
-            $.get("searchProcessing.php" , {word:input}).done(function(data) {
+            $.get("../searchProcessing.php" , {word:input}).done(function(data) {
                 dropdown.html(data)
             });
         } else {

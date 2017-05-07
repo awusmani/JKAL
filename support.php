@@ -56,8 +56,17 @@ function generatePage($body, $title) {
                     <div class="result" width=200></div>
                 </div>
                 </form>
-              <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Account<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
+                    <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
+                  </ul>
+                </li>
+                <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">0</span></a></li>
+
             </ul>
           </div>
         </nav>

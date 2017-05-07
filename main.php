@@ -38,7 +38,7 @@
 
 				<div class="animate-bottom">
 
-					<img src="images\JKAL_logo.png" class ="mainLogo" >
+					<img src="images\JKAL_logo.png" class ="mainLogo" width="40%">
 					<!-- <a href="main.php"><h1 class ="mainLogo" >LOGO IMAGE HERE</h1></a> -->
 					<ul class="mainLinks">
 						<li><a href="storeMain.php">Store</a></li>

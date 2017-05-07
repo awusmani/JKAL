@@ -8,7 +8,7 @@
 	}
 
 	$sUser = sanitize_string($database, trim($_POST["username"]));
-	$sEmail = sanitize_string($database, trim($_POST["email"])); 
+	$sEmail = sanitize_string($database, trim($_POST["email"]));
 	$phashed = password_hash("".trim($_POST['password'])."", PASSWORD_DEFAULT);
 	$sFirst = sanitize_string($database, trim($_POST["firstName"]));
 	$sLast = sanitize_string($database, trim($_POST["lastName"]));
@@ -20,11 +20,7 @@
 		die("Insertion failed: " . $database->error);
 	}
 
-
-
-
 	$database->close();
-
 
 	$body = "
 		<div class= 'centerText'>
@@ -57,10 +53,10 @@
 	";
 
 	function sanitize_string($db_connection, $string) {
-        if (get_magic_quotes_gpc()) { 
-            $string = stripslashes($string); 
-        } 
-        return htmlentities($db_connection->real_escape_string($string)); 
+        if (get_magic_quotes_gpc()) {
+            $string = stripslashes($string);
+        }
+        return htmlentities($db_connection->real_escape_string($string));
     }
 
 	$page = generatePage($body, "JKAL- Welcome");

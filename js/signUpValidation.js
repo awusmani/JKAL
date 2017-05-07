@@ -11,12 +11,11 @@ function main(){
 	let username = document.getElementById("username").value;
 
 	signUp.onclick = function(){
-
 		if(password.value !== confpass.value){
 			error.innerHTML = "Error: Passwords dont match";
 		}
 		else{
 			submit.submit();
 		}
-
+	}
 }

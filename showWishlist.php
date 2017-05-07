@@ -22,7 +22,7 @@
 			die("No entry exists ". $database->error);
 		} else {
 			$result->data_seek(0);
-			$row = $result->fetch_array(MYSQL_ASSOIC);
+			$row = $result->fetch_array(MYSQLI_ASSOC);
 			$jstring = $row['items'];
 			$arr = json_decode($jstring);
 

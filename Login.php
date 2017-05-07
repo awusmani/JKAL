@@ -27,7 +27,7 @@
 
 			</br></br>
 
-			<span class="error"></span>
+			<span id ="invPass" class="error"></span>
 
 			</br>
 			<input type= "button" name= "login" value= "Login" id="login">

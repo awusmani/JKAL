@@ -8,8 +8,9 @@ function generatePage($body, $title) {
         <meta charset="utf-8" />
         <title>$title</title>
 
-		<link rel="stylesheet" href="css\style.css" />
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="css\style.css" />
+        <link rel="stylesheet" href="css\sellerListing.css" />
 
     </head>
             

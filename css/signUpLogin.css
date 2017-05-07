@@ -1,10 +1,7 @@
-#invPass{
-	color: red;
+.error {
+	color: #f90000;
 }
 
-#signUpEmail{
-
-	width: 20em;
-
+body {
+	padding-top: 3em;
 }
-

@@ -1,0 +1,94 @@
+.mainpage {
+  background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.80),
+        rgba(0, 0, 0, 0.80)
+      ), url("../images/background1.jpg");
+  -webkit-background-size0: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /* Text Fade */
+	-webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	 animation: fadein 3s;
+
+   /* Font */
+   color: #ffffff;
+   font-family: 'Poppins', sans-serif;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.footer {
+    margin: 0 auto;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.footer li{
+  display:inline;
+  list-style-type: none;
+  padding: 0 .5em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:visited {
+  text-decoration: none;
+  color: #ffffff
+}
+
+.footer a:hover {
+  color: rgb(180, 180, 180);
+}
+
+.mainLinks{
+  list-style-type: none;
+	text-align:center;
+	margin: 0 auto;
+}
+
+.mainLinks li{
+  padding: .5em 0;
+}
+
+.mainLinks a{
+	text-decoration: none;
+	margin: 0 1em;
+	padding: .08em .2em;
+  color: #ffffff;
+}
+
+.mainLinks a:hover{
+  text-decoration: none;
+	background-color: #4b6271;
+  color: #ffffff;
+}
+
+.mainLinks a:visited{
+  text-decoration: none;
+	background-color: #4b6271;
+}
+
+.mainLogo {
+	display: block;
+  margin: 6em auto 1em auto;
+  text-align: center;
+}

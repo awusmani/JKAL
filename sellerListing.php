@@ -28,6 +28,7 @@
             $_SESSION['price'] = $_POST['price'];
             $_SESSION['category'] = $_POST['category'];
             $_SESSION['description'] = $_POST['description'];
+            header("Location: listingConfirmation.php");
         }
     }
 

@@ -19,13 +19,16 @@ function generatePage($body, $title) {
         <link rel="stylesheet" href="css\support.css" />
         <link rel="stylesheet" href="css\store.css" />
         <link rel="stylesheet" href="css\signUpLogin.css" />
+        <link rel="stylesheet" href="css\about.css" />
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="css\style.css" />
         <link rel="stylesheet" href="css\sellerListing.css" />
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
+        <script src="js/signUpValidation.js"></script>
+
     </head>
 
     <body>
@@ -33,10 +36,9 @@ function generatePage($body, $title) {
         <nav class="navbar navbar-default navbar-fixed-top navbar-static-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">JKAL</a>
+              <a href="main.php"><img src="images/JKAL_logo.png" class="navbar-brand"/></a>
             </div>
             <ul class="nav navbar-nav">
-              <li><a href="main.php">Home</a></li>
               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Store<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="storeMain.php">Main</a></li>
@@ -60,7 +62,10 @@ function generatePage($body, $title) {
           </div>
         </nav>
 
-    <div class="nav-container">$body</div>
+    <div class="nav-container">
+    <img src="images\JKAL_Logo.png" class="img-logo">
+    $body
+    </div>
 
     </body>
 </html>

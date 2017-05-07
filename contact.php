@@ -1,14 +1,13 @@
 <?php
-	
+
 	require_once "support.php";
 
-	
+
 	$body = <<<EOBODY
 
-	<div class = "mainLogo">
-		<img src="images\JKAL_logo.png">
-	</div>
-
+<div class="page-header">
+<h2>Contact Us</h2>
+</div>
 	<div id= "contact">
 		<form action = "contactSubmit.php" method="post">
 
@@ -26,7 +25,7 @@
 		</form>
 	</div>
 
-	
+
 
 
 EOBODY;

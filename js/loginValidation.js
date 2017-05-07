@@ -7,10 +7,31 @@ function main(){
 	let error = document.getElementById("invPass");
 	let login = document.getElementById("login");
 	let username = document.getElementById("username").value;
+	let submit = document.getElementById("submit");
 
 	login.onclick = function(){
 
-		//use ajax to run getAccounts.php
+		$.ajax({
+    
+		type : 'POST',
+		url  : 'getAccount.php',
+		data : data,
+		
+			success :  function(response)
+			{      
+				if(response=="Login Success")
+				{
+				 
+					submit.submit();
+				
+				}
+			else{
+			 
+					error.innerHTML = "Invalid Login.";
+				
+				}
+			}
+		});
 
 	}
 

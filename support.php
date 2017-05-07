@@ -9,7 +9,7 @@ function generatePage($body, $title) {
         <title>$title</title>
 
 		<link rel="stylesheet" href="css\style.css" />
-
+        <link rel="stylesheet" href="css\signUpLogin.css" />
 
     </head>
             

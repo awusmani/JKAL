@@ -1,6 +1,4 @@
 <?php
-
-
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 

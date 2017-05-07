@@ -1,7 +1,17 @@
 html {
-
+    text-align: center;
 }
 
-.form-format {
-    text-align: center;
+.form-row {
+    display: inline;
+    margin-bottom: 6px;
+}
+
+.label-text {
+    display: block;
+}
+
+.single-button {
+    display: block;
+    margin: auto;
 }

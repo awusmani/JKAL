@@ -6,6 +6,10 @@ html{
     background-size: cover;
 }
 
+body {
+	background-color:transparent;
+}
+
 footer {
     position: absolute;
   	right: 0;

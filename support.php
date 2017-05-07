@@ -21,16 +21,14 @@ function generatePage($body, $title) {
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <link rel="stylesheet" href="css\about.css" />
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="css\style.css" />
         <link rel="stylesheet" href="css\sellerListing.css" />
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
-<<<<<<< HEAD
         <script src="js/signUpValidation.js"></script>
-=======
->>>>>>> master
+
     </head>
 
     <body>

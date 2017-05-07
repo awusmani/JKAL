@@ -9,6 +9,10 @@ body {
 	 animation: fadein 3s;
 }
 
+.img-logo {
+  width: 40%;
+}
+
 input {
   border-radius: .5em;
   padding: .2em .5em;

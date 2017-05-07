@@ -19,10 +19,11 @@ function generatePage($body, $title) {
         <link rel="stylesheet" href="css\support.css" />
         <link rel="stylesheet" href="css\store.css" />
         <link rel="stylesheet" href="css\signUpLogin.css" />
+        <link rel="stylesheet" href="css\about.css" />
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
-
+        <script src="js/signUpValidation.js"></script>
     </head>
 
     <body>
@@ -57,7 +58,10 @@ function generatePage($body, $title) {
           </div>
         </nav>
 
-    <div class="nav-container">$body</div>
+    <div class="nav-container">
+    <img src="images\JKAL_Logo.png" class="img-logo">
+    $body
+    </div>
 
     </body>
 </html>

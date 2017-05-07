@@ -45,21 +45,20 @@
 						<li>
 							<a href="#aboutText" id="about" data-toggle="collapse">About</a>
 							<div id="aboutText" class="collapse" style="text-align:center; width:50em; margin:0 auto;">
-							JKAL is a CMSC389N Project made by Justin Kevin Abdul and Lihan. Add more shit here ya knuh 100 100 turn up for the SQUAAA bape x supreme yeezys we out here fam gang gang caravaggio
-						  </div>
+							JKAL (pronounced Jackal) is an online web store where people can quickly put up items to sell.
+							Imagine you want to clean out your closet or storage and want to put those items up for sale.
+							We make it easy for you host your own local store on here.<br /> <a href="about.php">Learn more...</a>
+							</div>
 						</li>
 						<li><a href="contact.php">Contact</a></li>
 					</ul>
 
 					<div class="footer">
 						<ul>
-							<li><a href="https://www.facebook.com/nelson.paduaperez"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/nelson.paduaperez" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
-							<li><a href="https://github.com/justinhchan/JKAL"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+							<li><a href="https://github.com/justinhchan/JKAL" target="_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
 						</ul>
-					</div>
-					<div class="clearfix">
-
 					</div>
 				</div>
 	    </body>

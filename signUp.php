@@ -1,6 +1,6 @@
 <?php
 
-	include "support.php";
+	require_once "support.php";
 
 	$body = <<<EOBODY
 	<div id= "contact">
@@ -10,7 +10,7 @@
 			<input type= "text" name= "lastName" placeholder= "last name" required>
 			</br></br>
 
-			<input type= "email" name= "email" placeholder= "email" required>
+			<input type= "email" name= "email" placeholder= "email" required style="width:20em;">
 			</br></br>
 
 			<input type= "text" name= "username" placeholder= "username" required>
@@ -20,21 +20,17 @@
 			</br></br>
 
 			<input type= "password" name= "confirmPassword" placeholder= "confirm password" id="confirmPassword" required>
-			</br></br>
-
+			</br><br />
 			<span id="invPass" class="error"></span>
-
-			</br>
+			</br><br />
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
-
 		</form>
+		<script src="js/signUpValidation.js"></script>
 		<br />
 	</div>
 EOBODY;
 
 
-$page = generatePage($body, "JKAL- Contact");
+$page = generatePage($body, "JKAL- Sign Up");
 echo $page;
-
-
 ?>

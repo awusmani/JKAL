@@ -1,0 +1,10 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  border-radius: .5em;
+  padding: .2em .5em;
+}

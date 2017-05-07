@@ -2,7 +2,7 @@
 
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
-		
+
 	$database = new mysqli($host, $user, $password, $database);
 	if ($database->connect_error) {
 		die($database->connect_error);
@@ -12,24 +12,17 @@
 	$phashed = password_hash("".trim($_POST['password'])."", PASSWORD_DEFAULT);
 
 	$query = "insert into accounts values('".trim($_POST["username"]).", ".trim($_POST["signUpEmail"]).", ".trim($phashed).", ".trim($_POST["firstName"]).", ".trim($_POST["lastName"])."')";
-			
+
 	$result = $database->query($query);
 	if (!$result) {
 		die("Insertion failed: " . $database->error);
 	}
-	
+
 
 	$database->close();
 
 
 	$body = "
-
-		<div class = 'mainLogo'>
-
-			<img src= 'images\JKAL_Logo.png'>
-
-		</div>
-
 		<div class= 'centerText'>
 
 			<p>

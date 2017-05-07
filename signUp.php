@@ -25,11 +25,7 @@
 			</br><br />
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 		</form>
-<<<<<<< HEAD
 		<script src="js/signUpValidation.js"></script>
-=======
-
->>>>>>> master
 		<br />
 	</div>
 EOBODY;

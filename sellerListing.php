@@ -23,6 +23,11 @@
         if($message == "") {
             move_uploaded_file($file_tmp, "upload/" . $file_name);
             $_SESSION['pic'] = $file_tmp;
+            $_SESSION['name'] = $_POST['name'];
+            $_SESSION['quantity'] = $_POST['quantity'];
+            $_SESSION['price'] = $_POST['price'];
+            $_SESSION['category'] = $_POST['category'];
+            $_SESSION['description'] = $_POST['description'];
         }
     }
 
@@ -35,7 +40,7 @@
             </div>    
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">What are you selling?</span>
-                <input type="text" name="item" class="form-control" required>
+                <input type="text" name="name" class="form-control" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">
@@ -53,7 +58,7 @@
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-group form-row">
                 <span class="label-text">Category</span>
-                <select class="form-control" id="sel1" required>
+                <select class="form-control" id="sel1" name="category" required>
                     <option>Accessories</option>
                     <option>Art</option>
                     <option>Books</option>

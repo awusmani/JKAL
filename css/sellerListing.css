@@ -3,15 +3,31 @@ html {
 }
 
 .form-row {
-    display: inline;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .label-text {
     display: block;
 }
 
+.error-text {
+    color: red;
+}
+
+.description {
+    resize: vertical;
+}
+
 .single-button {
     display: block;
     margin: auto;
+}
+
+.listing-form {
+    text-align: center;
+    background: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
 }

@@ -1,6 +1,26 @@
 <?php
 session_start();
+
 function generatePage($body, $title) {
+    if (isset($_SESSION['username'])) {
+        $rightSide = <<<EOPAGE
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
+            <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
+            <li class="divider"></li>
+            <li><a href="#" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">0</span></a></li>
+EOPAGE;
+    } else {
+        $rightSide = <<<EOPAGE
+        <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+EOPAGE;
+    }
+
     $page = <<<EOPAGE
 <!doctype html>
 <html>
@@ -27,8 +47,7 @@ function generatePage($body, $title) {
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
-        <script src="js/signUpValidation.js"></script>
-
+        <scriptsrc="js/navbar.js"></script>
     </head>
 
     <body>
@@ -56,17 +75,7 @@ function generatePage($body, $title) {
                     <div class="result" width=200></div>
                 </div>
                 </form>
-
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Account<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
-                    <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
-                  </ul>
-                </li>
-                <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">0</span></a></li>
-
+                $rightSide
             </ul>
           </div>
         </nav>

@@ -8,13 +8,13 @@
 		die($database->connect_error);
 	}
 
-	$user = sanitize_string($database, trim($_POST["username"]));
-	$email = sanitize_string($database, trim($_POST["email"])); 
+	$sUser = sanitize_string($database, trim($_POST["username"]));
+	$sEmail = sanitize_string($database, trim($_POST["email"])); 
 	$phashed = password_hash("".trim($_POST['password'])."", PASSWORD_DEFAULT);
-	$first = sanitize_string($database, trim($_POST["firstName"]));
-	$last = sanitize_string($database, trim($_POST["lastName"]));
+	$sFirst = sanitize_string($database, trim($_POST["firstName"]));
+	$sLast = sanitize_string($database, trim($_POST["lastName"]));
 
-	$query = "insert into accounts values('$user', '$email', '$phashed', '$first', '$last')";
+	$query = "insert into accounts values('$sUser', '$sEmail', '$phashed', '$sFirst', '$sLast')";
 			
 	$result = $database->query($query);
 	if (!$result) {

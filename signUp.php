@@ -15,7 +15,10 @@
 			<input type= "text" name= "lastName" placeholder= "last name" required>
 			</br></br>
 
-			<input type= "email" name= "email" placeholder= "email" required>
+			<input type= "email" name= "email" placeholder= "email" required id="signUpEmail">
+			</br></br>
+
+			<input type= "text" name= "username" placeholder= "username" required>
 			</br></br>
 
 			<input type= "password" name= "password" placeholder= "password" id="password" required>
@@ -29,7 +32,7 @@
 			</br>
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 
-			<script src="signUpValidation.js"></script>
+			<script src="js/signUpValidation.js"></script>
 
 		</form>
 	</div>

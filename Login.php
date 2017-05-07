@@ -1,11 +1,19 @@
 <?php
 
 
-		require_once "support.php";
+	require_once "support.php";
+
+
+	if(isset($_POST["login"])){
+		$_SESSION["username"] = $_POST["username"];
+
+		header("Location: storeMain.php");
+	}
+
 
 	$body = <<<EOBODY
 	<div id= "contact">
-		<form action = "signUpConfirm.php" method="post" id="submit" class="signUpForm">
+		<form action = "Login.php" method="post" id="submit" class="signUpForm">
 			<h4>Login:</h4>
 			
 
@@ -18,9 +26,11 @@
 			<span class="error"></span>
 
 			</br>
-			<input type= "button" name= "send" value= "Login" id="login">
+			<input type= "button" name= "login" value= "Login" id="login">
 
 		</form>
+
+		<script src="loginValidation.js"></script>
 
 		<br />
 	</div>

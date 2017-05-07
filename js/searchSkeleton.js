@@ -7,7 +7,6 @@
 
     <body>
         <div class="search">
-            <!-- autocomplete feature? -->
             <input type="text" autocomplete="off" placeholder="Search for item...">
             <div class="result"></div>
         </div>
@@ -26,4 +25,24 @@ $(document).ready(function() {
             dropdown.empty();
         }
     });
+
+    $(document).on("click", ".result p", function() {
+        $(this).parents(".searchbox").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+
+    /*
+        left = 37
+        up = 38
+        down = 39
+        right = 40
+        enter = 13
+    */
+    
+    /*
+    $(document).keydown(function(e) {
+        console.log(e.keyCode);
+        $(this).parent(".result").empty();
+    });
+    */
 });

@@ -17,9 +17,11 @@
 	    } else {
             $num_rows = $result->num_rows;
             if ($num_rows > 0) {
+                $count = 0;
                 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                     // return matches
-                    echo "<p>".$row["name"]."</p>";
+                    echo "<p id=sr".$count.">".$row["name"]."</p>";
+                    $count++;
                 }
                 $result->free();
             } else {

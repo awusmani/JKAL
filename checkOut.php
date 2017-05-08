@@ -4,8 +4,11 @@
 
     $arr = [];
 
-    $body = "<h1>Items have been checked out!</h1><br />";
-    $body .= "<hr><h2>Total Cost</h2>";
+    $body = "<div class='page-header'>
+    <h2>Checkout</h2>
+    </div>
+    <h3>Items have been checked out!</h3>";
+    $body .= "<h4>Total Cost</h4>";
     $total = 0;
     for ($index = 0; $index < sizeof($_SESSION['checkout']); $index++) {
         $id = $_SESSION['cartlist'][$index];
@@ -17,8 +20,8 @@
     $_SESSION['cartCount'] = 0;
     $_SESSION['cartlist'] = $arr;
 
-    $body .= "<strong>".$total."</strong><br />";
+    $body .= "<strong>\$".$total."</strong><br />";
 
-    $page = generatePage($body, "JKAL- Cart");
+    $page = generatePage($body, "JKAL- Checkout");
 	echo $page;
 ?>

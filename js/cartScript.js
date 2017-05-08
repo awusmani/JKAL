@@ -9,3 +9,31 @@ function request_access($this){
          console.log("requested access complete");
     })
 }
+
+function runAjax(){
+
+	return
+
+	$.ajax({
+
+		type : 'POST',
+		url  : 'AddToCart.php',
+		data : data,
+			success :  function(response)
+			{
+				if(response=="Login Success")
+				{
+
+					submit.submit();
+
+				}
+			else{
+
+					error.innerHTML = "Invalid Login.";
+
+				}
+			}
+		});
+
+}
+

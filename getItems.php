@@ -45,8 +45,8 @@ function getItems() {
                   <p>Seller: {$row['username']}</p>
                   <p>Quantity: {$row['quantity']}</p>
                   <p>
-                    <a class="btn btn-default btn-sm" href="showWishlist.php"><i class="fa fa-gift fa-lg"></i> Add to Wish List</a>
-                    <a class="btn btn-default btn-sm" href="#"><i class="fa fa-cart-plus fa-lg"></i> Add to Cart</a>
+                    <button class="btn btn-default btn-sm" href="showWishlist.php"><i class="fa fa-gift fa-lg"></i> Add to Wish List</button>
+                    <button class="btn btn-default btn-sm"><i class="fa fa-cart-plus fa-lg"></i> Add to Cart</button>
                   </p>
                 </div>
               </div>

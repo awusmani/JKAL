@@ -11,7 +11,7 @@ grant all on shopdb.accounts to 'csuser'@'localhost';
 
 grant all on shopdb.items to 'csuser'@'localhost';
 
-grant all on shopdb.wishlists to 'csuser'@'localhost';
+grant all on shopdb.wishlist to 'csuser'@'localhost';
 
 grant all on shopdb.images to 'csuser'@'localhost';
 

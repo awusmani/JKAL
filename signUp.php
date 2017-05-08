@@ -26,7 +26,9 @@
 
 			<input type= "password" name= "confirmPassword" placeholder= "confirm password" id="confirmPassword" required>
 			</br><br />
-			<span id="invPass" id="invPass" class="error"></span>
+			<span id="invPass" class="error"></span>
+			<span id="invUser" class="error"></span>
+
 			</br><br />
 			<input type= "button" name= "send" value= "Sign Up" id="signUp">
 		</form>

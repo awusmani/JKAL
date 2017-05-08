@@ -9,34 +9,49 @@ function main(){
 	let signUp = document.getElementById("signUp");
 	let submit = document.getElementById("submit");
 	let username = document.getElementById("username").value;
+	let errorUser = document.getElementById("invUser");
+	
 
 	signUp.onclick = function(){
+
+		let sub = false;
+
 		if(password.value !== confpass.value){
-			error.innerHTML += "Error: Passwords dont match";
+
+			error.innerHTML = "Error: password doesnt match";
+
+		}
+		else{
+			error.innerHTML = "";
+			sub = true;
 		}
 
-		var data = $("#submit").serialize();
+		let data = $("#submit").serialize();
 
 		$.ajax({
 
 		type : 'POST',
 		url  : 'getUsername.php',
 		data : data,
+
 			success :  function(response)
 			{
 				if(response=="New User")
 				{
+					errorUser.innerHTML = "";
 
-					submit.submit();
-
+					if(sub)
+					{
+						submit.submit();
+					}
 				}
 			else{
-
-					error.innerHTML += "Error: Username Taken";
-
+					errorUser.innerHTML = "</br>Error: username taken";
 				}
 			}
 		});
+
+
 	}
 
 	document.addEventListener('keypress', function (e){

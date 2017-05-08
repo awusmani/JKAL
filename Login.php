@@ -10,7 +10,7 @@
 	<div id= "contact">
 		<form action = "storeMain.php" method="post" id="submit" class="signUpForm">
 
-			<input type= "text" name= "username" placeholder= "username" id="username" required>
+			<input type= "text" name= "username" placeholder= "username" id="username" required autofocus>
 			</br></br>
 
 			<input type= "password" name= "password" placeholder="password" id="password" required>

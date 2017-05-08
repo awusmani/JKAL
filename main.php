@@ -47,7 +47,7 @@
 							<div id="aboutText" class="collapse" style="text-align:center; width:50em; margin:0 auto;">
 							JKAL (pronounced Jackal) is an online web store where people can quickly put up items to sell.
 							Imagine you want to clean out your closet or storage and want to put those items up for sale.
-							We make it easy for you host your own local store on here.<br /> <a href="about.php">Learn more...</a>
+							We make it easy for you host your own local store on here.<br /> <span class="other-link"><a href="about.php">Learn more...</a></span>
 							</div>
 						</li>
 						<li><a href="contact.php">Contact</a></li>

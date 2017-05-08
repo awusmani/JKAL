@@ -128,3 +128,7 @@
   from{ bottom:-100px; opacity:0 }
   to{ bottom:0; opacity:1 }
 }
+
+.other-link a:link {
+  color:#4390e0;
+}

@@ -30,7 +30,7 @@
 
 				</br></br>
 
-				Account Detaits:
+				Account Details:
 				</br>
 				<strong>First Name: </strong>".trim($_POST["firstName"])."
 				</br>

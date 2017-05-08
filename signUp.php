@@ -4,15 +4,6 @@
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 	
-	$body = <<<EOBODY
-
-	<div class = "mainLogo">
-		<img src="images\JKAL_logo.png">
-	</div>
-
-	include "support.php";
-
-	require_once "support.php";
 
 
 	$body = <<<EOBODY

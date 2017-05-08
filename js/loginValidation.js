@@ -11,13 +11,15 @@ function main(){
 
 	login.onclick = function(){
 
+		var data = $("#submit").serialize();
+
 		$.ajax({
 
 		type : 'POST',
 		url  : 'getAccount.php',
+		data : data,
 			success :  function(response)
 			{
-
 				if(response=="Login Success")
 				{
 
@@ -33,5 +35,12 @@ function main(){
 		});
 
 	}
+
+	document.addEventListener('keypress', function (e){
+		let key = e.which || e.keyCode;
+		if(key === 13){
+			login.click();
+		}
+	});
 
 }

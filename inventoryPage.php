@@ -18,7 +18,7 @@
             /* Number of rows found */
             $num_rows = $result->num_rows;
             if ($num_rows === 0) {
-                $body = "<p>It appears you do not have any active listings.</p>";
+                $body = "<p>It appears you do not have any active listings :(</p>";
             } else {
                 for ($row_index = 0; $row_index < $num_rows; $row_index++) {
                     $result->data_seek($row_index);
@@ -28,7 +28,7 @@
                                 <div class="row">
                                   <div class="col-sm-4">
                                     <div class="thumbnail">
-                                      <img src="images/placeholder.png" alt="image">
+                                      <img src ='data:image/png;base64,".base64_encode({$retrievePhoto['imageone']})."'/>
                                       <div class="caption">
                                         <p><strong>Name:</strong> {$row['name']}</p>
                                         <p><strong>Price:</strong> {$row['price']}</p>

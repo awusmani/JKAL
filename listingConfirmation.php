@@ -46,7 +46,7 @@
     }
 
     $body = $bottomPart;
-	$page = generatePage($body, "Listing Confirmation");
+	$page = generatePage($body, "JKAL - Listing Confirmation");
 	echo $page;
 
 ?>

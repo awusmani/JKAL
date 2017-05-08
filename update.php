@@ -39,7 +39,7 @@
 	/* Closing connection */
 	$db_connection->close();
 
-	$page = generatePage($body,"JKAL - Updated Account");
+	$page = generatePage($body,"JKAL - Account Updated");
 	echo $page;
 
 ?>

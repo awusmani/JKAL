@@ -63,6 +63,6 @@ EOBODY;
     /* Closing connection */
     $db_connection->close();
 
-    $page = generatePage($body, "Inventory");
+    $page = generatePage($body, "JKAL - Inventory");
     echo $page;
 ?>

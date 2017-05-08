@@ -8,7 +8,7 @@
 	}
 
 	// $_SESSION['cartlist'] = [];
-	// $_SESSION['cartlist'] = ['18','19','20'];
+	//  $_SESSION['cartlist'] = ['24','19','16'];
 
 	$body = "<div class='page-header'>
 	<h2>Your Cart</h2>

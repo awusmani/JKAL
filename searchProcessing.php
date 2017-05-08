@@ -20,15 +20,15 @@
                 $count = 0;
                 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                     // return matches
-                    echo "<p id=sr".$count.">".$row["name"]."</p>";
+                    echo "<p id=sr".$count.">".$row["name"]."</p></a>";
                     $count++;
                 }
                 $result->free();
             } else {
-                // 0 matches 
+                // 0 matches
             }
         }
-    }   
+    }
 
     $database->close();
 ?>

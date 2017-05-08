@@ -1,8 +1,9 @@
 <?php
     require_once "support.php";
     require_once "accountsDBLogin.php";
+    require_once "getImage.php";
 
-    $body = "";
+    $body = "<section class=\"contributors\">";
     $db_connection = new mysqli($host, $user, $password, $database);
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
@@ -23,29 +24,28 @@
                 for ($row_index = 0; $row_index < $num_rows; $row_index++) {
                     $result->data_seek($row_index);
                     $row = $result->fetch_array(MYSQLI_ASSOC);
+                    $picture = getImage($row['id']);
                     $card = <<<EOBODY
-                            <section class="contributors">
-                                <div class="row">
-                                  <div class="col-sm-4">
-                                    <div class="thumbnail">
-                                      <img src ='data:image/png;base64,".base64_encode({$retrievePhoto['imageone']})."'/>
-                                      <div class="caption">
+                            <div class="row col-sm-4">
+                                <div class="thumbnail">
+                                    $picture
+                                    <div class="caption">
                                         <p><strong>Name:</strong> {$row['name']}</p>
                                         <p><strong>Price:</strong> {$row['price']}</p>
                                         <p><strong>Quantity:</strong> {$row['quantity']}</p>
                                         <p><strong>Amount sold:</strong> {$row['sold']}</p>
                                         <a href="#" class="btn btn-primary">Edit Listing</a>
-                                      </div>
                                     </div>
-                                  </div>
                                 </div>
-                            </section>
+                            </div>
 EOBODY;
                     $body = $body.$card;
                 }
             }
         }
     }
+
+    $body = $body."<section>";
 
     /* Freeing memory */
     $result->close();

@@ -13,7 +13,6 @@
 	</div>
 	<div id= "contact">
 		<form action = "Login.php" method="post" id="submit" class="signUpForm">
-			<h4>Login:</h4>
 
 		<form action = "signUpConfirm.php" method="post" id="submit" class="signUpForm">
 			<input type= "text" name= "username" placeholder= "username" id="username" required>
@@ -37,7 +36,7 @@
 EOBODY;
 
 
-$page = generatePage($body, "JKAL- Contact");
+$page = generatePage($body, "JKAL- Login");
 echo $page;
 
 

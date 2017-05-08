@@ -12,22 +12,22 @@ function main(){
 	login.onclick = function(){
 
 		$.ajax({
-    
+
 		type : 'POST',
 		url  : 'getAccount.php',
-		
 			success :  function(response)
-			{      
+			{
+
 				if(response=="Login Success")
 				{
-				 
+
 					submit.submit();
-				
+
 				}
 			else{
-			 
+
 					error.innerHTML = "Invalid Login.";
-				
+
 				}
 			}
 		});

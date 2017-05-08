@@ -131,6 +131,6 @@
 
 EOBODY;
 
-    $page = generatePage($body, "JKAL- About");
+    $page = generatePage($body, "JKAL- Add Listing");
     echo $page;
 ?>

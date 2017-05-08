@@ -1,15 +1,11 @@
 <?php
-
-
 	require_once "support.php";
-
 
 	if(isset($_POST["login"])){
 		$_SESSION["username"] = $_POST["username"];
 
 		header("Location: storeMain.php");
 	}
-
 
 	$body = <<<EOBODY
 	<div class="page-header">
@@ -34,7 +30,7 @@
 
 		</form>
 
-		<script src="loginValidation.js"></script>
+		<script src="js/loginValidation.js"></script>
 
 		<br />
 	</div>

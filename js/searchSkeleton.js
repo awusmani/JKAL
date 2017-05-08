@@ -4,7 +4,7 @@ $(document).ready(function() {
         let dropdown = $(this).siblings(".result");
         if (input.length) {
             $.get("../JKAL/searchProcessing.php" , {keyword:input}).done(function(data) {
-                dropdown.html(data)
+                dropdown.html(data);
             });
         } else {
             dropdown.empty();
@@ -14,6 +14,7 @@ $(document).ready(function() {
     $(document).on("click", ".result p", function() {
         $(this).parents(".searchbox").find('input[type="text"]').val($(this).text());
         $(this).parent(".result").empty();
+        document.getElementById("searchbox").focus();
     });
 
     /*

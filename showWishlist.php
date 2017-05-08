@@ -10,7 +10,7 @@
 		die($database->connect_error);
 	}
 
-	$sUser = $_SERVER["username"];
+	$sUser = $_SESSION["username"];
  
     $query = "select items from wishlist where username='$sUser'";
 

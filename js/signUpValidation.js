@@ -18,4 +18,11 @@ function main(){
 			submit.submit();
 		}
 	}
+
+	document.addEventListener('keypress', function (e){
+		let key = e.which || e.keyCode;
+		if(key === 13){
+			signUp.click();
+		}
+	});
 }

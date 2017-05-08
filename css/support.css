@@ -44,3 +44,8 @@ input {
   position: relative;
   bottom: 0;
 }
+
+.searchOption {
+    cursor:pointer;
+    color:#4492b9;
+}

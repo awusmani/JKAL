@@ -18,9 +18,10 @@
             $num_rows = $result->num_rows;
             if ($num_rows > 0) {
                 $count = 0;
+                echo "<p style='height:.1em;'></p>";
                 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                     // return matches
-                    echo "<p id=sr".$count.">".$row["name"]."</p></a>";
+                    echo "<p class='searchOption' id=sr".$count.">".$row["name"]."</p>";
                     $count++;
                 }
                 $result->free();

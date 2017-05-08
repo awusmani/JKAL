@@ -27,7 +27,9 @@
 	$database->close();
 
 	$bottomPart = "
-        <h1>Item Successfully Added!</h1><br /><br />
+        <div class='page-header'>
+        <h2>Item Successfully Added!</h2>
+        </div><br />
         <strong>Listing: ".$name."</strong><br />
 
         <img src ='data:image/png;base64,".base64_encode($retrieve['imageone'])."'/><br />

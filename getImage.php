@@ -12,7 +12,7 @@ function getImage($id) {
     die($db_connection->connect_error);
   } else { // Successful Connection
     /* Query */
-    $query = "select imageone from items,images where items.id='{$id}'";
+    $query = "select * from items,images where items.id='{$id}'";
     /* Executing query */
     $result = $db_connection->query($query);
 

@@ -13,9 +13,11 @@
 	} else {
 
 	}
-	
+
 	/* Query */
-	$query = "select username from accounts where username =".trim($_POST["username"])."";
+	$query = "select * from accounts where username ='".trim($_POST["username"])."'";
+
+	//$query = "select * from accounts where username = 'Cuk'";
 			
 	/* Executing query */
 	$result = $db_connection->query($query);
@@ -29,18 +31,23 @@
 			
 		} else {
 			
+
 			$result->data_seek(0);
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			
-			if (password_verify(trim($_POST['password']), $row['password'])) {
-				$_SESSION["firstName"] = $row["First name"];
-				$_SESSION["lastName"] = $row["Last name"];
 
-				die("Login Success");
+			if (password_verify(trim($_POST['password']), $row['password'])) {
+				$_SESSION["firstname"] = $row["firstname"];
+				$_SESSION["lastname"] = $row["lastname"];
+				$_SESSION["username"] = $row["username"];
+
+				echo "Login Success";
 			}
 			else{
-				die("Incorrect Login");
+				echo "Incorrect Login";
 			}
+			
+		}
+	}
 	
 	/* Freeing memory */
 	$result->close();

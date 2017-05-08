@@ -37,6 +37,7 @@
 				$_SESSION["lastname"] = $row["lastname"];
 				$_SESSION["username"] = $row["username"];
 				$_SESSION["cartCount"] = 0;
+				$_SESSION["cartlist"] = [];
 
 				die("Login Success");
 			}

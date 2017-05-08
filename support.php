@@ -67,7 +67,7 @@ EOPAGE;
                 <form class="navbar-form navbar-left" method="post" action="search.php">
                     <div class="searchbox">
                         <input type="text" id="searchbox" name="searchOption" autocomplete="off" placeholder="Search for item..." />
-                        <div class="result" width="200"></div>
+                        <div class="result"></div>
                     </div>
                 </form>
                 $rightSide

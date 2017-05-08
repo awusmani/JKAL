@@ -15,9 +15,7 @@ function main(){
 
 		type : 'POST',
 		url  : 'getAccount.php',
-		data : data,
-
-			success :  function(response)
+		success :  function(response)
 			{
 				if(response=="Login Success")
 				{

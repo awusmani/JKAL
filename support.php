@@ -79,7 +79,8 @@ EOPAGE;
     <img src="images\JKAL_Logo.png" class="img-logo">
     $body
     </div>
-
+    <script src='js/cartScript.js'></script>
+    <script src='js/removeCart.js'></script>
     </body>
 </html>
 EOPAGE;

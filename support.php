@@ -6,7 +6,7 @@ function generatePage($body, $title) {
         $rightSide = <<<EOPAGE
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
+            <li><a href="updateApplication.php"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
             <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
             <li class="divider"></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -47,7 +47,6 @@ EOPAGE;
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
-        <scriptsrc="js/navbar.js"></script>
     </head>
 
     <body>

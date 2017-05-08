@@ -4,9 +4,9 @@ body {
   text-align: center;
 
   /* Text Fade */
-	-webkit-animation: fadein 3s;
-	-moz-animation: fadein 3s;
-	 animation: fadein 3s;
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	 animation: fadein 1s;
 }
 
 .img-logo {

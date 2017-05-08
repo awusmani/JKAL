@@ -1,19 +1,14 @@
 <?php
-	
+
 	require_once "support.php";
 
-	
+
 	$body = "
-
-	<div class = 'mainLogo'>
-		<img src='images\JKAL_logo.png'>
-	</div>
-
 	<div class= 'centerText'>
 
 		<p>
 
-			Thanks ".$_POST['firstName']." ".$_POST['lastName'].", </br> we will reply to your message:</br></br>
+			Thank you ".$_POST['firstName']." , </br> we will reply to your message:</br></br>
 
 			".$_POST['comments']."
 
@@ -27,6 +22,3 @@
 
 	$page = generatePage($body, "JKAL- Contact");
 	echo $page;
-
-
-

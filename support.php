@@ -9,7 +9,7 @@ function generatePage($body, $title) {
             <li><a href="#"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
             <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
             <li class="divider"></li>
-            <li><a href="#" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
         <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">0</span></a></li>

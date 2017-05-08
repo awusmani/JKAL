@@ -8,8 +8,6 @@ function generatePage($body, $title) {
           <ul class="dropdown-menu">
             <li><a href="updateApplication.php"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
             <li><a href="inventoryPage.php"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
-            <li><a href="updateAccount.php"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
-            <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
             <li class="divider"></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>

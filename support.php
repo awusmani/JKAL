@@ -47,7 +47,6 @@ EOPAGE;
         <link rel="stylesheet" href="css\signUpLogin.css" />
         <script src="https://use.fontawesome.com/f7f9767f2d.js"></script>
         <script src="js/searchSkeleton.js"></script>
-        <scriptsrc="js/navbar.js"></script>
     </head>
 
     <body>

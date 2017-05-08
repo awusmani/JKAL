@@ -13,38 +13,28 @@
     $description = "";
 
     if(isset($_POST["submit"])) {
-        $extensions= array("jpeg","jpg","png");
-
-        $file_name = $_FILES["image"]['name'];
-        $file_tmp = $_FILES["image"]['tmp_name'];
-        $file_size = $_FILES["image"]['size'];
-        $file_type = $_FILES["image"]['type'];
-
-        $name = $_POST['name'];
-        $quantity = $_POST['quantity'];
-        $price = $_POST['price'];
-        $category = $_POST['category'];
-        $description = $_POST['description'];
-
+        $extensions= array("jpeg", "jpg", "png");
+        $file_name = $_FILES["userimage"]['name'];
+        $file_size = $_FILES["userimage"]['size'];
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
-        if(in_array($file_ext,$extensions) === false){
-            $message = $message."Please choose a JPEG or PNG file.\n";
+        if ($file_size > 5242880) {
+            echo '<p>File size must be no bigger than 5 MB.<p><br />';
         }
-        if($file_size > 50000000){
-            $message = $message."File size must be no bigger than 50 MB.\n";
-        }
-
-        if($message == "") {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        if (in_array($file_ext,$extensions) === true) {
+            $img = addslashes(file_get_contents($_FILES['userimage']['tmp_name']));
+            $name = $_POST['name'];
+            $quantity = $_POST['quantity'];
+            $price = $_POST['price'];
+            $category = $_POST['category'];
+            $description = $_POST['description'];
             $database = new mysqli($host, $user, $password, $database);
-	        if ($database->connect_error) {
-		        die($database->connect_error);
+	            
+            if ($database->connect_error) {
+	            die($database->connect_error);
 	        }
 
-            //$imgData = addslashes(file_get_contents($_FILES["image"]['name']));
-
-            move_uploaded_file($file_tmp, "upload/" . $file_name);
-            $_SESSION['pic'] = $file_tmp;
             $_SESSION['name'] = $name;
             $_SESSION['quantity'] = $quantity;
             $_SESSION['price'] = $price;
@@ -55,7 +45,7 @@
             $sName = sanitize_string($database, trim($name));
             $sType = $category;
             $sDsrt = sanitize_string($database, trim($description));
-            $sUser = $_SESSION['testacc'];
+            $sUser = $_SESSION['username'];
             $sQnty = $quantity;
             $sSold = 0;
             
@@ -65,23 +55,21 @@
             if (!$result) {
                 die("Insertion failed: " . $database->error);
             } else {
-                /*
                 $last_id = $database->insert_id;
-                
-                $query2 = "insert into images values ('$last_id','{$imgData}','','')";
+                    
+                $query2 = "insert into images values ('$last_id','$img','','')";
 
                 $result2 = $database->query($query2);
                 if (!$result2) {
                     die("Insertion failed: " . $database->error);
                 }
-                
-                $_SESSION['lastid'] = id;
-                */
+                $_SESSION['lastid'] = $last_id;
             }
             $database->close();
             header("Location: listingConfirmation.php");
+        } else {
+            echo '<p>Please choose a JPEG or PNG file.<p><br />';
         }
-        
     }
 
     function sanitize_string($db_connection, $string) {
@@ -100,7 +88,7 @@
             </div>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 What does it look like?
-                <input type="file" name="image" id="fileToUpload" required>
+                <input type="file" name="userimage" id="fileToUpload" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">

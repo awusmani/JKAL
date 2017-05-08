@@ -14,7 +14,7 @@ function generatePage($body, $title) {
           </ul>
         </li>
 
-        <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">{$_SESSION['cartCount']}</span></a></li>
+        <li class="active"><a href="cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">{$_SESSION['cartCount']}</span></a></li>
 EOPAGE;
     } else {
         $rightSide = <<<EOPAGE

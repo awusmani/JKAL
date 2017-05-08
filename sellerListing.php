@@ -18,8 +18,8 @@
         $file_size = $_FILES["userimage"]['size'];
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
-        if ($file_size > 5242880) {
-            echo '<p>File size must be no bigger than 5 MB.<p><br />';
+        if ($file_size > 16777215) {
+            echo '<p>File size must be no bigger than 15 MB.<p><br />';
         }
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         if (in_array($file_ext,$extensions) === true) {

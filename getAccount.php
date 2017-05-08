@@ -35,7 +35,7 @@
 			if (password_verify(trim($_POST['password']), $row['password'])) {
 				$_SESSION["firstname"] = $row["firstname"];
 				$_SESSION["lastname"] = $row["lastname"];
-				$_SESSION["username"] = $row["lastname"];
+				$_SESSION["username"] = $row["username"];
 
 				die("Login Success");
 			}

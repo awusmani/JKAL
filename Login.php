@@ -10,7 +10,6 @@
 	<div id= "contact">
 		<form action = "storeMain.php" method="post" id="submit" class="signUpForm">
 
-		<form action = "signUpConfirm.php" method="post" id="submit" class="signUpForm">
 			<input type= "text" name= "username" placeholder= "username" id="username" required>
 			</br></br>
 
@@ -18,12 +17,14 @@
 
 			</br></br>
 
+		</form>
+
 			<span id ="invPass" class="error"></span>
 
 			</br>
 			<input type= "button" name= "login" value= "Login" id="login">
 
-		</form>
+		
 
 		<script src="js/loginValidation.js"></script>
 

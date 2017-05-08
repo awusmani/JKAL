@@ -2,7 +2,7 @@
     declare(strict_types=1);
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
-		
+
     $name = $_SESSION['name'];
     $quantity = $_SESSION['quantity'];
     $price = $_SESSION['price'];
@@ -13,7 +13,7 @@
 	if ($database->connect_error) {
 		die($database->connect_error);
 	}
-    
+
     $last_id = $_SESSION['lastid'];
 
     $query = "select * from images where id='$last_id'";
@@ -29,17 +29,17 @@
 	$bottomPart = "
         <h1>Item Successfully Added!</h1><br /><br />
         <strong>Listing: ".$name."</strong><br />
-        <img src ='data:image/jpeg;base64,".base64_encode($retrieve['imageone'])."'/><br />
+        <img src ='data:image/png;base64,".base64_encode($retrieve['imageone'])."' style='width:20%;'/><br />
         <strong>Price: $".$price."</strong><br />
         <strong>Category: ".$category."</strong><br />
         <strong>Description: ".$description."</strong><br />
 ";
 
 	function sanitize_string($db_connection, $string) {
-        if (get_magic_quotes_gpc()) { 
-            $string = stripslashes($string); 
-        } 
-        return htmlentities($db_connection->real_escape_string($string)); 
+        if (get_magic_quotes_gpc()) {
+            $string = stripslashes($string);
+        }
+        return htmlentities($db_connection->real_escape_string($string));
     }
 
     $body = $bottomPart;

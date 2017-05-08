@@ -2,7 +2,7 @@
 
 function request_access2($this){
     let request_data = $this.id;
-    
+
     let dataString = 'lang=' + request_data;
 
 
@@ -13,7 +13,6 @@ function request_access2($this){
     	data: dataString,
     	cache: false,
     	success: function(response){
-
     		location.reload();
     	}
 

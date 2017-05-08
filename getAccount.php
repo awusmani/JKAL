@@ -16,7 +16,7 @@
 
 	/* Query */
 	$query = "select * from accounts where username ='".trim($_POST["username"])."'";
-			
+
 	/* Executing query */
 	$result = $db_connection->query($query);
 	if (!$result) {
@@ -35,7 +35,7 @@
 			if (password_verify(trim($_POST['password']), $row['password'])) {
 				$_SESSION["firstname"] = $row["firstname"];
 				$_SESSION["lastname"] = $row["lastname"];
-				$_SESSION["username"] = $row["lastname"];
+				$_SESSION["username"] = $row["username"];
 
 				die("Login Success");
 			}

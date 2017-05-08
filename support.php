@@ -4,9 +4,9 @@ session_start();
 function generatePage($body, $title) {
     if (isset($_SESSION['username'])) {
         $rightSide = <<<EOPAGE
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Account<span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> {$_SESSION["username"]}<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="updateApplication.php"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
+            <li><a href="updateAccount.php"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
             <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
             <li class="divider"></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>

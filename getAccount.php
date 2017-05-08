@@ -16,7 +16,7 @@
 
 	/* Query */
 	$query = "select * from accounts where username ='".trim($_POST["username"])."'";
-			
+
 	/* Executing query */
 	$result = $db_connection->query($query);
 	if (!$result) {

@@ -23,6 +23,10 @@ html {
     margin: auto;
 }
 
+.card-format {
+    margin-left: 5px;
+}
+
 .listing-form {
     text-align: center;
     background: none;

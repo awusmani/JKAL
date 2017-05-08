@@ -56,4 +56,4 @@ Images database:
 -imagetwo(blob)
 -imagethree(blob)
 -->
-create table images(id int NOT NULL, imageone blob, imagetwo blob, imagethree blob, FOREIGN KEY(id) REFERENCES items(id) ON DELETE CASCADE);
+create table images(id int NOT NULL, imageone mediumblob, imagetwo mediumblob, imagethree mediumblob, FOREIGN KEY(id) REFERENCES items(id) ON DELETE CASCADE);

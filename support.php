@@ -12,7 +12,8 @@ function generatePage($body, $title) {
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
-        <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">0</span></a></li>
+
+        <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">{$_SESSION['cartCount']}</span></a></li>
 EOPAGE;
     } else {
         $rightSide = <<<EOPAGE

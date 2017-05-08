@@ -2,6 +2,7 @@
 
 function getItems() {
   require_once("accountsDBLogin.php");
+  require_once("getImage.php");
 
   $db_connection = new mysqli($host, $user, $password, $database);
 
@@ -24,16 +25,6 @@ function getItems() {
       if ($num_rows === 0) {
         echo "<br /><br /><br /><h3 class='error'>No Items for Sale</h3>";
       } else {
-        // Found row(s)
-        $result->data_seek(0);
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-
-        // $body .= "<table border='1'><tr>";
-        //
-        // // foreach ($_POST["fields"] as $key => $val) {
-        // //   $body .= "<th>".ucfirst($val)."</th>";
-        // // }
-        // $body .= "</tr>";
 
         // Item Row
         $table .= "<div class='row' style='margin:0 auto;width:80%;'>";
@@ -41,17 +32,22 @@ function getItems() {
           $result->data_seek($row_index);
   				$row = $result->fetch_array(MYSQLI_ASSOC);
 
+          $image = getImage($row['id']);
+          // Create card
           $table .= <<<EOBODY
             <div class="col-sm-4">
               <div class="thumbnail">
-                <img src="images/placeholder.png" alt="Item Image">
+                $image
                 <div class="caption">
                   <h3>{$row['name']}</h3>
                   <p>Price: \${$row['price']}</p>
                   <p>Description: {$row['description']}</p>
                   <p>Seller: {$row['username']}</p>
                   <p>Quantity: {$row['quantity']}</p>
-                  <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-cart-plus fa-lg"></i> Add to Cart</a></p>
+                  <p>
+                    <a class="btn btn-default btn-sm" href="showWishlist.php"><i class="fa fa-gift fa-lg"></i> Add to Wish List</a>
+                    <a class="btn btn-default btn-sm" href="#"><i class="fa fa-cart-plus fa-lg"></i> Add to Cart</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -61,7 +57,7 @@ EOBODY;
       $table .= "</div>";
 
         /* Freeing memory */
-        $result->close();
+
       }
     }
 

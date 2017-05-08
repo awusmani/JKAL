@@ -41,7 +41,7 @@
 		        die($database->connect_error);
 	        }
 
-            $imgData = addslashes(file_get_contents($_FILES["image"]['name']));
+            //$imgData = addslashes(file_get_contents($_FILES["image"]['name']));
 
             move_uploaded_file($file_tmp, "upload/" . $file_name);
             $_SESSION['pic'] = $file_tmp;
@@ -55,7 +55,7 @@
             $sName = sanitize_string($database, trim($name));
             $sType = $category;
             $sDsrt = sanitize_string($database, trim($description));
-            $sUser = 'testacc';
+            $sUser = $_SESSION['testacc'];
             $sQnty = $quantity;
             $sSold = 0;
             
@@ -65,7 +65,9 @@
             if (!$result) {
                 die("Insertion failed: " . $database->error);
             } else {
+                /*
                 $last_id = $database->insert_id;
+                
                 $query2 = "insert into images values ('$last_id','{$imgData}','','')";
 
                 $result2 = $database->query($query2);
@@ -74,6 +76,7 @@
                 }
                 
                 $_SESSION['lastid'] = id;
+                */
             }
             $database->close();
             header("Location: listingConfirmation.php");

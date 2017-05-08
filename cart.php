@@ -54,8 +54,9 @@
 									<p>Description: {$row['description']}</p>
 									<p>Seller: {$row['username']}</p>
 									<p>
-										<button class="btn btn-danger btn-sm" id="{$row['id']}"><i class="fa fa-times fa-lg"></i> Remove from cart</button>
+										<button class="btn btn-danger btn-sm" onclick="request_access2(this)" id="{$row['id']}"><i class="fa fa-times fa-lg"></i> Remove from cart</button>
 									</p>
+
 								</div>
 							</div>
 						</div>

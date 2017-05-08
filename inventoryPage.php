@@ -11,7 +11,9 @@
         $_SESSION['description'] = $description;
     }
 
-    $body = "<section>";
+    $body = "<div class='page-header'>
+    <h2>Inventory</h2>
+    </div><section>";
     $db_connection = new mysqli($host, $user, $password, $database);
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
@@ -32,16 +34,17 @@
                 for ($row_index = 0; $row_index < $num_rows; $row_index++) {
                     $result->data_seek($row_index);
                     $row = $result->fetch_array(MYSQLI_ASSOC);
-                    $picture = getImage($row['id'],$row_index);
+                    $picture = getImage($row['id']);
                     $card = <<<EOBODY
                             <div class="row col-sm-4 card-format">
                                 <div class="thumbnail">
                                     $picture
                                     <div class="caption">
                                         <p><strong>Name:</strong> {$row['name']}</p>
-                                        <p><strong>Price:</strong> {$row['price']}</p>
+                                        <p><strong>Price:</strong> \${$row['price']}</p>
                                         <p><strong>Quantity:</strong> {$row['quantity']}</p>
                                         <p><strong>Amount sold:</strong> {$row['sold']}</p>
+                                        <p><strong>Description:</strong> {$row['description']}</p>
                                         <!--<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Edit Listing">-->
                                     </div>
                                 </div>

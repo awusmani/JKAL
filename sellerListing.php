@@ -18,7 +18,7 @@
         $file_size = $_FILES["userimage"]['size'];
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
-        if ($filesize > 5242880) {
+        if ($file_size > 5242880) {
             echo '<p>File size must be no bigger than 5 MB.<p><br />';
         }
         $finfo = finfo_open(FILEINFO_MIME_TYPE);

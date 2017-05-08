@@ -95,12 +95,12 @@
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">How many?</span>
-                <input type="text" class="listing-form" name="quantity" value="{$quantity}" placeholder="enter a quantity" required>
+                <input type="number" class="listing-form" name="quantity" value="{$quantity}" step="1" min="1" placeholder="enter a quantity" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">How much per unit?</span>
-                <input type="text" class="listing-form" name="price" value="{$price}" placeholder="in whole $" required>
+                <input type="text" class="listing-form" name="price" value="{$price}" placeholder="$" required>
             </div>
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-group form-row">

@@ -6,7 +6,6 @@
     $message = "";
 
     $name = "";
-    $name = "";
     $quantity = "";
     $price = "";
     $category = "";
@@ -19,16 +18,16 @@
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
         if ($file_size > 16777215) {
-            echo "<br /><br /><h3 class='error'>File size must be no bigger than 15 MB.</h3><br />";
+            $message = $message."<br /><br /><h3 class='error'>File size must be no bigger than 15 MB.</h3><br />";
         }
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $name = $_POST['name'];
+        $quantity = $_POST['quantity'];
+        $price = $_POST['price'];
+        $category = $_POST['category'];
+        $description = $_POST['description'];
         if (in_array($file_ext,$extensions) === true) {
             $img = addslashes(file_get_contents($_FILES['userimage']['tmp_name']));
-            $name = $_POST['name'];
-            $quantity = $_POST['quantity'];
-            $price = $_POST['price'];
-            $category = $_POST['category'];
-            $description = $_POST['description'];
             $database = new mysqli($host, $user, $password, $database);
 
             if ($database->connect_error) {
@@ -68,7 +67,7 @@
             $database->close();
             header("Location: listingConfirmation.php");
         } else {
-            echo '<p>Please choose a JPEG or PNG file.<p><br />';
+            $message = $message.'<p>Please choose a JPEG or PNG file.<p><br/>';
         }
     }
 
@@ -79,6 +78,80 @@
         return htmlentities($db_connection->real_escape_string($string));
     }
 
+    if($category === "Accessories"){
+        $category="<option selected='selected'>Accessories</option>
+                   <option>Art</option>
+                   <option>Books</option>
+                   <option>Clothing</option>
+                   <option>Computers</option>
+                   <option>Electronics</option>
+                   <option>Music</option>
+                   <option>Other</option>";
+    }elseif ($category === "Art"){
+        $category="<option>Accessories</option>
+                   <option selected='selected'>Art</option>
+                   <option>Books</option>
+                   <option>Clothing</option>
+                   <option>Computers</option>
+                   <option>Electronics</option>
+                   <option>Music</option>
+                   <option>Other</option>";
+    }elseif ($category === "Books"){
+            $category="<option>Accessories</option>
+                       <option>Art</option>
+                       <option selected='selected'>Books</option>
+                       <option>Clothing</option>
+                       <option>Computers</option>
+                       <option>Electronics</option>
+                       <option>Music</option>
+                       <option>Other</option>";
+    }elseif ($category === "Clothing"){
+        $category="<option>Accessories</option>
+                   <option>Art</option>
+                   <option>Books</option>
+                   <option selected='selected'>Clothing</option>
+                   <option>Computers</option>
+                   <option>Electronics</option>
+                   <option>Music</option>
+                   <option>Other</option>";
+    }elseif ($category === "Computers"){
+        $category="<option>Accessories</option>
+                   <option>Art</option>
+                   <option>Books</option>
+                   <option>Clothing</option>
+                   <option selected='selected'>Computers</option>
+                   <option>Electronics</option>
+                   <option>Music</option>
+                   <option>Other</option>";
+    }elseif ($category === "Electronics") {
+        $category = "<option>Accessories</option>
+                       <option>Art</option>
+                       <option>Books</option>
+                       <option>Clothing</option>
+                       <option>Computers</option>
+                       <option selected='selected'>Electronics</option>
+                       <option>Music</option>
+                       <option>Other</option>";
+    }elseif ($category === "Music") {
+        $category = "<option>Accessories</option>
+                       <option>Art</option>
+                       <option>Books</option>
+                       <option>Clothing</option>
+                       <option>Computers</option>
+                       <option>Electronics</option>
+                       <option selected='selected'>Music</option>
+                       <option>Other</option>";
+    }else{
+        $category = "<option>Accessories</option>
+                       <option>Art</option>
+                       <option>Books</option>
+                       <option>Clothing</option>
+                       <option>Computers</option>
+                       <option>Electronics</option>
+                       <option>Music</option>
+                       <option selected='selected'>Other</option>";
+}
+
     $body = <<<EOBODY
         <form action="{$_SERVER["PHP_SELF"]}" enctype="multipart/form-data" method="post">
             <div class="page-header">
@@ -86,7 +159,7 @@
             </div>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">What are you selling?</span>
-                <input type="text" class="listing-form" name="name" value="{$name}" placeholder="e.g. Yeezys" required>
+                <input type="text" class="listing-form" name="name" value="{$name}" placeholder="e.g. Yeezys" autofocus required>
             </div>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 What does it look like?
@@ -105,15 +178,8 @@
             <br>
             <div class="col-lg-2 col-lg-offset-5 form-group form-row">
                 <span class="label-text">Category</span>
-                <select class="listing-form" id="sel1" name="category" required>
-                    <option>Accessories</option>
-                    <option>Art</option>
-                    <option>Books</option>
-                    <option>Clothing</option>
-                    <option>Computers</option>
-                    <option>Electronics</option>
-                    <option>Music</option>
-                    <option>Other</option>
+                <select class="listing-form" id="sel1" name="category" value="{$category}" required>
+                    $category
                 </select>
             </div>
             <div class="col-lg-4 col-lg-offset-4 form-group form-row">

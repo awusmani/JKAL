@@ -64,11 +64,11 @@ EOPAGE;
               <li><a href="contact.php">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left">
-                <div class="searchbox">
-                    <input type="text" autocomplete="off" placeholder="Search for item..." />
-                    <div class="result" width=200></div>
-                </div>
+                <form class="navbar-form navbar-left" method="post" action="search.php">
+                    <div class="searchbox">
+                        <input type="text" name="searchOption" autocomplete="off" placeholder="Search for item..." />
+                        <div class="result" width="200"></div>
+                    </div>
                 </form>
                 $rightSide
             </ul>

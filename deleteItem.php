@@ -5,7 +5,7 @@ function decrementItem($id) {
     $password = "helloworld";
     $database = "shopdb";
 
-    $db_connection = new mysqli($host, $user, $passwordk, $database);
+    $db_connection = new mysqli($host, $user, $password, $database);
 
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);

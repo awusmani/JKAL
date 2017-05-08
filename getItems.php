@@ -32,7 +32,7 @@ function getItems() {
           $result->data_seek($row_index);
   				$row = $result->fetch_array(MYSQLI_ASSOC);
 
-          $image = getImage($row['id']);
+          $image = getImage($row['id'],$row_index);
           // Create card
           $table .= <<<EOBODY
             <div class="col-sm-4">

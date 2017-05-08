@@ -11,8 +11,6 @@ grant all on shopdb.accounts to 'csuser'@'localhost';
 
 grant all on shopdb.items to 'csuser'@'localhost';
 
-grant all on shopdb.wishlist to 'csuser'@'localhost';
-
 grant all on shopdb.images to 'csuser'@'localhost';
 
 create database shopdb;
@@ -41,13 +39,6 @@ Items database:
 - sold(int)
 -->
 create table items(id int NOT NULL AUTO_INCREMENT PRIMARY KEY, price decimal(6,2), name varchar(40), type varchar(40), description text, username varchar(20) NOT NULL, quantity int, sold int, FOREIGN KEY (username) REFERENCES accounts(username));
-
-<!---
-Wishlists database:
-Username(varchar) -- foreign key from accounts
-id(int) -- foreign key from items
--->
-create table wishlist(username varchar(20) NOT NULL, items text, FOREIGN KEY(username) REFERENCES accounts(username) ON DELETE CASCADE);
 
 <!---
 Images database:

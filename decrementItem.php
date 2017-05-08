@@ -1,5 +1,6 @@
 <?php
 function decrementItem($id) {
+    require_once("deleteItems.php");
     $host = "localhost";
     $user = "csuser";
     $password = "helloworld";
@@ -10,17 +11,16 @@ function decrementItem($id) {
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
     } else {
-        $query = "update items set quantity=quantity-1 where id='{$id}'";
+        $query = "update items set quantity=quantity-1 where id='{$id}' and quantity>0";
     
         $result = $db_connection->query($query);
 
         if(!$result) {
             die("Query failed: ".$db_connection->error);
         } else {
-            $query2 = "delete from items where quantity=0";
-
-            $delete = $db_connection->query($query);
+            deleteItem($id);
         }
     }
+    $db_connection->close();
 }
 ?>

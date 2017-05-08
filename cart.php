@@ -6,6 +6,8 @@
 	if (!isset($_SESSION['username'])) {
 		header('Location: Login.php');
 	}
+	
+	$priceList = [];
 
 	// $_SESSION['cartlist'] = [];
 	//  $_SESSION['cartlist'] = ['24','19','16'];
@@ -21,9 +23,9 @@
 
 	  $table="";
 
-	  if ($db_connection->connect_error) {
-	    die($db_connection->connect_error);
-	  } else { // Successful Connection
+		if ($db_connection->connect_error) {
+			die($db_connection->connect_error);
+	  	} else { // Successful Connection
 
 			$table .= "<div class='row' style='margin:0 auto;width:80%;'>";
 			// For each cart item
@@ -37,13 +39,15 @@
 				$result = $db_connection->query($query);
 
 				if (!$result) {
-		      die("Retrieval failed: ". $db_connection->error);
-		    } else {
+				die("Retrieval failed: ". $db_connection->error);
+				} else {
 					$result->data_seek(0);
-  				$row = $result->fetch_array(MYSQLI_ASSOC);
+					$row = $result->fetch_array(MYSQLI_ASSOC);
 					// Item Row
 					$image = getImage($currentId);
 					// Create card
+					array_push($priceList,$row['price']);
+					
 					$table .= <<<EOBODY
 						<div class="col-sm-4">
 							<div class="thumbnail">
@@ -61,16 +65,16 @@
 							</div>
 						</div>
 EOBODY;
-		    }
+				}
 			} // End cartlist forloop
 			$table .= "</div>";
 
 	  /* Closing connection */
 	  $db_connection->close();
-
+	  $_SESSION['checkout'] = $priceList;
 	  }
 			$body .= $table;
-			$body .= "<br /><hr /><br /><a class='btn btn-lg btn-primary' href='#'>
+			$body .= "<br /><hr /><br /><a class='btn btn-lg btn-primary' href='checkOut.php'>
 			<i class='fa fa-shopping-basket' aria-hidden='true'></i> Checkout</a>";
 	}
 

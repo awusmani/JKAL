@@ -3,7 +3,8 @@
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 		
-	$database = new mysqli($host, $user, $password, $database);
+	/*
+    $database = new mysqli($host, $user, $password, $database);
 	if ($database->connect_error) {
 		die($database->connect_error);
 	}
@@ -20,7 +21,7 @@
     }
 
 	$database->close();
-
+    */
 
 	$bottomPart = <<<EOBODY
         <p> Hello </p><br />

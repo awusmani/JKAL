@@ -2,21 +2,22 @@
 	/* This example assumes a table friends in the database myDB  */
 	/* exists.  The table has at least two fields: name and id.   */
 	/* The script displays all the records in the table           */
-	
-	require_once "accountsDBLogin.php"; 
+
+	require_once "accountsDBLogin.php";
 
 	session_start();
-		
+
 	$db_connection = new mysqli($host, $user, $password, $database);
 	if ($db_connection->connect_error) {
 		die($db_connection->connect_error);
 	} else {
 
 	}
-	
+
 	/* Query */
-	$query = "select username from accounts where username =".trim($_POST["username"])."";
-			
+	$query = "select username from accounts where username ='".trim($_POST["username"])."'";
+	echo "<br /><br /><br />".$query;
+
 	/* Executing query */
 	$result = $db_connection->query($query);
 	if (!$result) {
@@ -26,12 +27,12 @@
 		$num_rows = $result->num_rows;
 		if ($num_rows === 0) {
 			//username not found
-			
+
 		} else {
-			
+
 			$result->data_seek(0);
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			
+
 			if (password_verify(trim($_POST['password']), $row['password'])) {
 				$_SESSION["firstName"] = $row["First name"];
 				$_SESSION["lastName"] = $row["Last name"];
@@ -41,10 +42,10 @@
 			else{
 				die("Incorrect Login");
 			}
-	
+
 	/* Freeing memory */
 	$result->close();
-	
+
 	/* Closing connection */
 	$db_connection->close();
 ?>

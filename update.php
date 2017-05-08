@@ -12,7 +12,7 @@
 	} else {
 		/* Check if password is verified */
 		if ($_POST["password"] != $_POST["password2"]) {
-			header("Location: updateApplication.php");
+			header("Location: updateAccount.php");
 		}
 
 		/* Query */
@@ -26,7 +26,9 @@
 			// Update completed
 
 			$body .=
-				"<h2>Your information has been updated:</h2>
+				"<div class='page-header'>
+				<h2>Information Has Been Updated</h2>
+				</div>
 				<p>
 				<strong>First Name: </strong>".$_POST['firstname']."<br />
 				<strong>Last Name: </strong>".$_POST['lastname']."<br />

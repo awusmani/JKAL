@@ -3,12 +3,12 @@
   require_once("accountsDBLogin.php");
 
   // Validation
-  $body = "<div class='page-header'><h2>Update Application</h2></div>";
+  $body = "<div class='page-header'><h2>Update Account Information</h2></div>";
   $body .= <<<EOBODY
     <form action="{$_SERVER['PHP_SELF']}" method="post">
-    <strong>username associated with application:</strong><input type="text" name="username" autofocus required/>
+    <input type="text" name="username" placeholder="Username" autofocus required/>
     <br /><br />
-    <strong>Password associated with application:</strong><input type="password" name="password" required/>
+    <input type="password" name="password" placeholder="Password" required/>
     <br /><br />
 
     <input type="submit" name="submitButton" value="Submit"/><br /><br />
@@ -31,7 +31,7 @@ EOBODY;
         /* Number of rows found */
         $num_rows = $result->num_rows;
         if ($num_rows === 0) {
-          echo "<h4 class='invalid'>No entry exists in the database for the specified email and password</h4>";
+          $body .=  "<h3 class='error'>Username does not exist.</h3>";
         } else {
           // Found row(s)
           $result->data_seek(0);
@@ -40,7 +40,7 @@ EOBODY;
           if (password_verify($_POST['password'], $row['password'])) {
             // Correct password
 
-            $body = "<div class='page-header'><h2>Update Application</h2></div>
+            $body = "<div class='page-header'><h2>Update Account Information</h2></div>
             <form action='update.php' method='post'>
             <input type='hidden' name='username' value='".$_POST['username']."'/>
             <strong>Frist Name:</strong><input type='text' name='firstname' value={$row['firstname']} autofocus required/>

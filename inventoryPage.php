@@ -3,7 +3,15 @@
     require_once "accountsDBLogin.php";
     require_once "getImage.php";
 
-    $body = "<section class=\"contributors\">";
+    if(isset($_POST["submit"])){
+        $_SESSION['name'] = $name;
+        $_SESSION['quantity'] = $quantity;
+        $_SESSION['price'] = $price;
+        $_SESSION['category'] = $category;
+        $_SESSION['description'] = $description;
+    }
+
+    $body = "<section>";
     $db_connection = new mysqli($host, $user, $password, $database);
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
@@ -24,9 +32,9 @@
                 for ($row_index = 0; $row_index < $num_rows; $row_index++) {
                     $result->data_seek($row_index);
                     $row = $result->fetch_array(MYSQLI_ASSOC);
-                    $picture = getImage($row['id']);
+                    $picture = getImage($row['id'],$row_index);
                     $card = <<<EOBODY
-                            <div class="row col-sm-4">
+                            <div class="row col-sm-4 card-format">
                                 <div class="thumbnail">
                                     $picture
                                     <div class="caption">
@@ -34,7 +42,7 @@
                                         <p><strong>Price:</strong> {$row['price']}</p>
                                         <p><strong>Quantity:</strong> {$row['quantity']}</p>
                                         <p><strong>Amount sold:</strong> {$row['sold']}</p>
-                                        <a href="#" class="btn btn-primary">Edit Listing</a>
+                                        <!--<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Edit Listing">-->
                                     </div>
                                 </div>
                             </div>
@@ -45,8 +53,7 @@ EOBODY;
         }
     }
 
-    $body = $body."<section>";
-
+    $body = $body."</section>";
     /* Freeing memory */
     $result->close();
 

@@ -8,12 +8,13 @@ function generatePage($body, $title) {
           <ul class="dropdown-menu">
             <li><a href="updateAccount.php"><i class="fa fa-pencil fa-lg"></i> Edit Account</a></li>
             <li><a href="#"><i class="fa fa-archive fa-lg" aria-hidden="true"></i> Inventory</a></li>
+            <li><a href="sellerListing.php"><i class="fa fa-plus" aria-hidden="true"></i> New Listing</a></li>
             <li class="divider"></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </li>
 
-        <li class="active"><a href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">{$_SESSION['cartCount']}</span></a></li>
+        <li class="active"><a href="cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;<span class="badge">{$_SESSION['cartCount']}</span></a></li>
 EOPAGE;
     } else {
         $rightSide = <<<EOPAGE

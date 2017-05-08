@@ -12,11 +12,31 @@ function main(){
 
 	signUp.onclick = function(){
 		if(password.value !== confpass.value){
-			error.innerHTML = "Error: Passwords dont match";
+			error.innerHTML += "Error: Passwords dont match";
 		}
-		else{
-			submit.submit();
-		}
+
+		var data = $("#submit").serialize();
+
+		$.ajax({
+
+		type : 'POST',
+		url  : 'getUsername.php',
+		data : data,
+			success :  function(response)
+			{
+				if(response=="New User")
+				{
+
+					submit.submit();
+
+				}
+			else{
+
+					error.innerHTML += "Error: Username Taken";
+
+				}
+			}
+		});
 	}
 
 	document.addEventListener('keypress', function (e){

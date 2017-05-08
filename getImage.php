@@ -1,5 +1,5 @@
 <?php
-function getImage($id, $count) {
+function getImage($id) {
   require_once "accountsDBLogin.php";
   $host = "localhost";
   $user = "csuser";
@@ -12,7 +12,9 @@ function getImage($id, $count) {
     die($db_connection->connect_error);
   } else { // Successful Connection
     /* Query */
-    $query = "select * from items,images where items.id='{$id}'";
+    // correct one: "select id,imageone from images natural join items where id='{$id}'"
+    $query = "select id,imageone from images natural join items where id='{$id}'";
+
     /* Executing query */
     $result = $db_connection->query($query);
 
@@ -25,10 +27,10 @@ function getImage($id, $count) {
         $image = "<img src='images/placeholder.png'/>";
       } else {
         // Found something
-        $result->data_seek($count);
+        $result->data_seek(0);
         $retrieve = $result->fetch_array(MYSQLI_ASSOC);
         $temp = base64_encode($retrieve['imageone']);
-        $image = "<img src='data:image/png;base64,".base64_encode($retrieve['imageone'])."'/>";
+        $image = "<img src='data:image/png;base64,".base64_encode($retrieve['imageone'])."' style='height:20em;'/>";
       }
     }
   }

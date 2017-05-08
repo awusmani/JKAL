@@ -56,6 +56,7 @@ EOBODY;
 
 /* Display All Items */
 $body .= getItems();
+$body .= "<script src='js/cartScript.js'></script>";
 
 
 $page = generatePage($body, "JKAL- Store");

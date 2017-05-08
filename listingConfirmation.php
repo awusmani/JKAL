@@ -27,10 +27,12 @@
 	$database->close();
 
 	$bottomPart = "
-        <h1>Item Successfully Added!</h1><br /><br />
+        <div class='page-header'>
+        <h2>Item Successfully Added!</h2>
+        </div><br />
         <strong>Listing: ".$name."</strong><br />
 
-        <img src ='data:image/png;base64,".base64_encode($retrieve['imageone'])."' width='280' height='280' /><br />
+        <img src ='data:image/png;base64,".base64_encode($retrieve['imageone'])."' style='height:20em;' /><br />
         <strong>Price: $".$price."</strong><br />
         <strong>Category: ".$category."</strong><br />
         <strong>Description: ".$description."</strong><br />

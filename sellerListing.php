@@ -19,7 +19,7 @@
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
         if ($file_size > 16777215) {
-            echo '<p>File size must be no bigger than 15 MB.<p><br />';
+            echo "<br /><br /><h3 class='error'>File size must be no bigger than 15 MB.</h3><br />";
         }
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         if (in_array($file_ext,$extensions) === true) {
@@ -30,7 +30,7 @@
             $category = $_POST['category'];
             $description = $_POST['description'];
             $database = new mysqli($host, $user, $password, $database);
-	            
+
             if ($database->connect_error) {
 	            die($database->connect_error);
 	        }
@@ -40,7 +40,7 @@
             $_SESSION['price'] = $price;
             $_SESSION['category'] = $category;
             $_SESSION['description'] = $description;
-            
+
             $sPrice = sanitize_string($database, trim($price));
             $sName = sanitize_string($database, trim($name));
             $sType = $category;
@@ -48,7 +48,7 @@
             $sUser = $_SESSION['username'];
             $sQnty = $quantity;
             $sSold = 0;
-            
+
             $query = "insert into items (price, name, type, description, username, quantity, sold) values ('$sPrice', '$sName', '$sType', '$sDsrt', '$sUser', '$sQnty', '$sSold')";
 
             $result = $database->query($query);
@@ -56,7 +56,7 @@
                 die("Insertion failed: " . $database->error);
             } else {
                 $last_id = $database->insert_id;
-                    
+
                 $query2 = "insert into images values ('$last_id','$img','','')";
 
                 $result2 = $database->query($query2);
@@ -73,15 +73,17 @@
     }
 
     function sanitize_string($db_connection, $string) {
-        if (get_magic_quotes_gpc()) { 
-            $string = stripslashes($string); 
-        } 
-        return htmlentities($db_connection->real_escape_string($string)); 
+        if (get_magic_quotes_gpc()) {
+            $string = stripslashes($string);
+        }
+        return htmlentities($db_connection->real_escape_string($string));
     }
 
     $body = <<<EOBODY
         <form action="{$_SERVER["PHP_SELF"]}" enctype="multipart/form-data" method="post">
-            <h1>Create a new listing:</h1>
+            <div class="page-header">
+            <h2>Create a New Listing</h2>
+            </div>
             <div class="col-lg-2 col-lg-offset-5 form-row">
                 <span class="label-text">What are you selling?</span>
                 <input type="text" class="listing-form" name="name" value="{$name}" placeholder="e.g. Yeezys" required>

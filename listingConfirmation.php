@@ -3,7 +3,12 @@
 	require_once "support.php";
 	require_once "accountsDBLogin.php";
 		
-	/*
+    $name = $_SESSION['name'];
+    $quantity = $_SESSION['quantity'];
+    $price = $_SESSION['price'];
+    $category = $_SESSION['category'];
+    $description = $_SESSION['description'];
+
     $database = new mysqli($host, $user, $password, $database);
 	if ($database->connect_error) {
 		die($database->connect_error);
@@ -11,23 +16,24 @@
     
     $last_id = $_SESSION['lastid'];
 
-    $query = "select imageone from images where id='$last_id'";
+    $query = "select * from images where id='$last_id'";
     $result = $database->query($query);
     if (!$result) {
         die("Query failed: " . $database->error);
     } else {
-        header("Content-type: image/png");
-        echo mysqli_result($result,0);
+        $retrieve = $result->fetch_array(MYSQLI_ASSOC);
     }
 
 	$database->close();
-    */
 
-	$bottomPart = <<<EOBODY
-        <p> Hello </p><br />
-EOBODY;
-    $bottomPart .= "<p>".$_SESSION["pic"]."</p><br />";
-    $bottomPart .= "<p>".$sImg[0]."</p>";
+	$bottomPart = "
+        <h1>Item Successfully Added!</h1><br /><br />
+        <strong>Listing: ".$name."</strong><br />
+        <img src ='data:image/jpeg;base64,".base64_encode($retrieve['imageone'])."'/><br />
+        <strong>Price: $".$price."</strong><br />
+        <strong>Category: ".$category."</strong><br />
+        <strong>Description: ".$description."</strong><br />
+";
 
 	function sanitize_string($db_connection, $string) {
         if (get_magic_quotes_gpc()) { 

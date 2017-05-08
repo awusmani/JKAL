@@ -1,6 +1,5 @@
 <?php
-function deleteItem($id) {
-    require_once("incrementSold.php");
+function incrementSold($id) {
     $host = "localhost";
     $user = "csuser";
     $password = "helloworld";
@@ -10,14 +9,12 @@ function deleteItem($id) {
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
     } else {
-        $query = "delete from items where quantity=0";
+        $query = "update items set sold=sold+1 where id='{$id}'";
     
         $result = $db_connection->query($query);
 
         if(!$result) {
             die("Query failed: ".$db_connection->error);
-        }  else {
-            incrementSold($id);
         }
     }
     $db_connection->close();

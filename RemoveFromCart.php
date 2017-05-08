@@ -5,11 +5,24 @@
 	//die("test");
 	if(isset($_SESSION['cartlist'])){
 
-		$_SESSION['cartlist'][] = $_POST['lang'];
+		$newArray = array();
+		$deleted = false;
+		foreach($_SESSION['cartlist'] as $key=>$value){
+			if($value == $_POST['lang'] && $deleted == false){
+				$deleted = true;
+			}else{
+				array_push($newArray, $value);
+			}
 
-		if(($key = array_search($_POST['lang'], $arr)) !== false) {
-		    unset($arr[$key]);
 		}
+
+
+		$_SESSION['cartlist'] = $newArray;
+
+
+		
+
+		//die();
 
 		$_SESSION['cartCount']--;
 		

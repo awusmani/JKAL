@@ -29,7 +29,8 @@
 
 			$table .= "<div class='row' style='margin:0 auto;width:80%;'>";
 			// For each cart item
-			for ($row_index = 0; $row_index < sizeof($_SESSION['cartlist']); $row_index++) {
+			$row_index = 0;
+			for ($row_index; $row_index < count($_SESSION['cartlist']); $row_index++) {
 				$currentId = $_SESSION['cartlist'][$row_index];
 
 				/* Query */

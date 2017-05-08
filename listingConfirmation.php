@@ -29,7 +29,8 @@
 	$bottomPart = "
         <h1>Item Successfully Added!</h1><br /><br />
         <strong>Listing: ".$name."</strong><br />
-        <img src ='data:image/png;base64,".base64_encode($retrieve['imageone'])."' style='width:20%;'/><br />
+
+        <img src ='data:image/png;base64,".base64_encode($retrieve['imageone'])."'/><br />
         <strong>Price: $".$price."</strong><br />
         <strong>Category: ".$category."</strong><br />
         <strong>Description: ".$description."</strong><br />

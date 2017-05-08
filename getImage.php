@@ -1,5 +1,5 @@
 <?php
-function getImage($id) {
+function getImage($id, $count) {
   require_once "accountsDBLogin.php";
   $host = "localhost";
   $user = "csuser";
@@ -25,9 +25,10 @@ function getImage($id) {
         $image = "<img src='images/placeholder.png'/>";
       } else {
         // Found something
+        $result->data_seek($count);
         $retrieve = $result->fetch_array(MYSQLI_ASSOC);
         $temp = base64_encode($retrieve['imageone']);
-        $image = "<img src='data:image/png;base64,{$temp}'/>";
+        $image = "<img src='data:image/png;base64,".base64_encode($retrieve['imageone'])."'/>";
       }
     }
   }

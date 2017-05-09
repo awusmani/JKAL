@@ -145,7 +145,7 @@
                                                 $category
                                             </select><br>
                                         <span class="label-text"><strong>Description:</strong></span>
-                                        <input type="text" name="description" value="{$row['description']}" class="listing-form">
+                                        <textarea class="listing-form description" rows="1" cols="50" name="description" placeholder="condition, rarity, etc.">{$row['description']}</textarea>
                                         <br>
                                         <strong>Amount sold:</strong> {$row['sold']}</p>
                                         <input type="hidden" name="id" value="{$row['id']}">

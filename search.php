@@ -41,7 +41,7 @@
 								<p>Seller: {$row['username']}</p>
 								<p>Quantity: {$row['quantity']}</p>
 								<p>
-									<button class="btn btn-default btn-sm"><i class="fa fa-gift fa-lg"></i> Add to Wish List</button>
+									<!-- <button class="btn btn-default btn-sm"><i class="fa fa-gift fa-lg"></i> Add to Wish List</button> -->
 									<button class="btn btn-default btn-sm" onclick="request_access(this)" id="{$row['id']}"><i class="fa fa-cart-plus fa-lg"></i> Add to Cart</button>
 								</p>
 							</div>

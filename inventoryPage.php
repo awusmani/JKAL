@@ -33,7 +33,7 @@
 
         $sUser = $_SESSION["username"];
         /* Query */
-        $query = "select * from items where username='$sUser' and quantity!=sold";
+        $query = "select * from items where username='$sUser'";
 
         $result = $db_connection->query($query);
         if (!$result) {

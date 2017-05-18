@@ -48,8 +48,11 @@
                     $result->data_seek($row_index);
                     $row = $result->fetch_array(MYSQLI_ASSOC);
                     $picture = getImage($row['id']);
-
-                    $category="";
+                    $soldOut = "";
+                    $category = "";
+                    if ($row['quantity'] == 0) {
+                        $soldOut = "Sold Out";
+                    }
                     if($row['type'] === "Accessories"){
                         $category="<option selected='selected'>Accessories</option>
                                    <option>Art</option>
@@ -147,7 +150,7 @@
                                         <span class="label-text"><strong>Description:</strong></span>
                                         <textarea class="listing-form description" rows="1" cols="50" name="description" placeholder="condition, rarity, etc.">{$row['description']}</textarea>
                                         <br>
-                                        <strong>Amount sold:</strong> {$row['sold']}</p>
+                                        <strong>Amount sold:</strong> {$row['sold']}<br><p class="error">$soldOut</p></p>
                                         <input type="hidden" name="id" value="{$row['id']}">
                                         <input type="submit" name="submit" class="btn btn-success btn-sm" value="Update Listing">
                                     </div>

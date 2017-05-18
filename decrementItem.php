@@ -1,6 +1,6 @@
 <?php
 function decrementItem($id) {
-    require_once("deleteItems.php");
+    require_once("incrementSold.php");
     $host = "localhost";
     $user = "csuser";
     $password = "helloworld";
@@ -18,7 +18,7 @@ function decrementItem($id) {
         if(!$result) {
             die("Query failed: ".$db_connection->error);
         } else {
-            deleteItem($id);
+            incrementSold($id);
         }
     }
     $db_connection->close();

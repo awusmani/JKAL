@@ -12,7 +12,7 @@ function getItems() {
     die($db_connection->connect_error);
   } else { // Successful Connection
     /* Query */
-    $query = "select * from items";
+    $query = "select * from items where quantity > 0";
 
     /* Executing query */
     $result = $db_connection->query($query);

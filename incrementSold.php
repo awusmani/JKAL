@@ -9,7 +9,7 @@ function incrementSold($id) {
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
     } else {
-        $query = "update items set sold=sold+1 where id='{$id}'";
+        $query = "update items set sold=sold+1 where id='{$id}' and quantity > 0";
     
         $result = $db_connection->query($query);
 

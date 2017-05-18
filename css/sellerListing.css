@@ -1,0 +1,36 @@
+html {
+    text-align: center;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.label-text {
+    display: block;
+}
+
+.error-text {
+    color: red;
+}
+
+.description {
+    resize: vertical;
+}
+
+.single-button {
+    display: block;
+    margin: auto;
+}
+
+.card-format {
+    margin-left: 5px;
+}
+
+.listing-form {
+    text-align: center;
+    background: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}

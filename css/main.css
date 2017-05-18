@@ -1,0 +1,134 @@
+.mainpage {
+  background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.80),
+        rgba(0, 0, 0, 0.80)
+      ), url("../images/background1.jpg");
+  -webkit-background-size0: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /* Text Fade */
+	-webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	 animation: fadein 3s;
+
+   /* Font */
+   color: #ffffff;
+   font-family: 'Poppins', sans-serif;
+   padding-top: 13%;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.footer {
+    display:block;
+    margin: 0 auto;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.footer li{
+  display:inline;
+  list-style-type: none;
+  padding: 0 .5em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:visited {
+  text-decoration: none;
+  color: #ffffff
+}
+
+.footer a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer a:hover {
+  color: #b4b4b4;
+}
+
+.mainLinks{
+  list-style-type: none;
+	text-align:center;
+	margin: 0 auto;
+}
+
+.mainLinks li{
+  padding: .5em 0;
+}
+
+.mainLinks a{
+	text-decoration: none;
+	margin: 0 1em;
+	padding: .08em .2em;
+  color: #ffffff;
+}
+
+.mainLinks a:hover{
+  text-decoration: none;
+	/*background-color: #4b6271;*/
+  color: #b4b4b4;
+}
+
+.mainLinks a:visited{
+  text-decoration: none;
+	background-color: #4b6271;
+}
+
+.mainLinks a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.mainLogo {
+	display: block;
+  margin: 0 auto 1em auto;
+  text-align: center;
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1.5s;
+  animation-name: animatebottom;
+  animation-duration: 1.5s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+.other-link a:link {
+  color:#4390e0;
+}

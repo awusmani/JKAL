@@ -11,7 +11,7 @@ grant all on shopdb.accounts to 'csuser'@'localhost';
 
 grant all on shopdb.items to 'csuser'@'localhost';
 
-grant all on shopdb.wishlists to 'csuser'@'localhost';
+grant all on shopdb.images to 'csuser'@'localhost';
 
 create database shopdb;
 
@@ -30,7 +30,6 @@ create table accounts(username varchar(20) NOT NULL PRIMARY KEY, email varchar(3
 <!---
 Items database:
 - id int not null AUTO_INCREMENT PRIMARY KEY
-- Image(blob)
 - Price(decimal)
 - Name(varchar)
 - Type of item(varchar)
@@ -39,11 +38,13 @@ Items database:
 - quantity(int)
 - sold(int)
 -->
-create table items(id int NOT NULL AUTO_INCREMENT PRIMARY KEY, image blob, price decimal(6,2), name varchar(40), type varchar(40), description text, username varchar(20) NOT NULL, quantity int, sold int, FOREIGN KEY (username) REFERENCES accounts(username));
+create table items(id int NOT NULL AUTO_INCREMENT PRIMARY KEY, price decimal(6,2), name varchar(40), type varchar(40), description text, username varchar(20) NOT NULL, quantity int, sold int, FOREIGN KEY (username) REFERENCES accounts(username));
 
 <!---
-Wishlists database:
-Username(varchar) -- foreign key from accounts
-id(int) -- foreign key from items
+Images database:
+-id(int) -- foreign key from items
+-imageone(blob)
+-imagetwo(blob)
+-imagethree(blob)
 -->
-create table wishlists(username varchar(20) NOT NULL, id int NOT NULL, FOREIGN KEY(username) REFERENCES accounts(username), FOREIGN KEY(id) REFERENCES items(id));
+create table images(id int NOT NULL, imageone mediumblob, imagetwo mediumblob, imagethree mediumblob, FOREIGN KEY(id) REFERENCES items(id) ON DELETE CASCADE);
